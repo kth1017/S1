@@ -1,0 +1,9 @@
+* 웹서비스 구현 책을 활용한 미니 게시판 프로젝트
+
+// junit5 테스트 +
+
+// indexControllerTest에서 this로 restTemplate에 접근해야하는 이유
+
+// property에 내용 추가시 글 등록시 internal sever error alert 발생
+- posts 테이블을 찾을 수 없다는 콘솔로그 발생, ddl 옵션 추가로 테이블 초기화
+- property대신 yml로 h2 등록 후 jpa 관련 내용 추가 후 *해결
