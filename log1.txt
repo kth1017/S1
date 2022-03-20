@@ -64,13 +64,21 @@ $ 주문 취소 로직
 #api & dto
 - 설계시 api를 통해 화면 구성이 이루어지므로 api 요청 및 응답에 dto 객체를 사용하도록 설계
 - dto로 param을 받고 entity로 변환한 후 dao로 이동
-- 따라서 dto클래스 안에 toentity 작성
+- 따라서 requestDto클래스 안에 toentity 작성 / responseDto는 entity를 받아서 생성만
 * api컨트롤러는 서비스에 로직 요청 후 코딩된 결과를 반환 / 뷰컨트롤러는 뷰 네임을 반환
 #페이지 로딩
 - 헤더에선 css, 푸터에선 js(js의 용량이 크면 헤더 로딩시 오래걸림 > 바디가 늦어짐)
 
+! 새로 학습한 지식(복습시 책의 테스트 코드 필수!)
+* 기존의 mvc에 api요소를 더해봄
+* 설계시 실제/api view를 분리 > apicontroller, api js, api 반응 view, 데이터 전달 dto, api test
+- view 버튼의 id를 js와 매핑 > js의 api를 받을 controller 생성 > model보단 api처리를 위한 dto 등으로 비즈니스 로직 매핑
+- client view의 indexController 생성 > view에 담을 model + 도메인을 전달할 dto로 구성
+- 필요에 따라 실제 뷰 하나에서 여러 api를 요청 가능케 설계 가능
+* reposit interface를 jpa를 상속해서 구현체처럼 사용 가능
 
-
+9. 스프링 시큐리티
+#이미 있는 리디렉션되는 별도 컨트롤러를 만들 필요 없음
 
 
 
