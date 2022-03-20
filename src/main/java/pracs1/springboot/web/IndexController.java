@@ -5,18 +5,28 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import pracs1.springboot.config.auth.dto.SessionUser;
 import pracs1.springboot.service.posts.PostsService;
 import pracs1.springboot.web.dto.PostsResponseDto;
 
+import javax.servlet.http.HttpSession;
+
 @RequiredArgsConstructor
 @Controller
-public class IndexController {
+public class IndexController { // view용 controller
 
     private final PostsService postsService;
+    private final HttpSession httpSession;
 
     @GetMapping("/")
     public String index(Model model) {
         model.addAttribute("posts", postsService.findAllDesc());
+
+        SessionUser user = (SessionUser) httpSession.getAttribute("user"); // 로그인 성공시 객체 생성
+
+        if (user != null) {
+            model.addAttribute("userName", user.getName());
+        }
         return "index"; // starter 의존성으로 주소, 확장자 자동 추가
     }
 

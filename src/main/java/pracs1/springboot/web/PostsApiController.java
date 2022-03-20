@@ -11,7 +11,7 @@ import pracs1.springboot.web.dto.PostsUpdateRequestDto;
 
 @RequiredArgsConstructor
 @RestController
-public class PostsApiController {
+public class PostsApiController { // api용 컨트롤러
 
     private final PostsService postsService;
 
