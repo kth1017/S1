@@ -18,3 +18,10 @@
 !! 구글 로그인시 구글 자체 로그인창의 아이디들이 하나로 모든게 통합해서 진행됨(view 이름 정보가 동일)
 - h2 db 내에선 정보가 다름
 - 문제 파악 +
+
+!! 세션 저장소를 h2로 지정했을때 테이블이 생기지 않는 문제
+- yml에 jdbc.initialize-schema: always 추가하여 ddl-auto와 비슷하게 테이블 생성 *해결(안되면 직접 sql작성해야함..)
+- db 내의 attributes +
+
+!! yml 문법오류
+- yml에서 redirect-uri는 ""로 감싸야함 *해결
