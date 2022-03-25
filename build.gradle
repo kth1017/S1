@@ -37,6 +37,7 @@ dependencies {
     implementation('org.springframework.session:spring-session-jdbc')
     // 테스트용
     testImplementation('org.springframework.boot:spring-boot-starter-test')
+    testImplementation('org.springframework.security:spring-security-test')
 
     runtimeOnly 'com.h2database:h2'
 }
