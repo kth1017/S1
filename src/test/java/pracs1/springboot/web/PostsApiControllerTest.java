@@ -75,7 +75,7 @@ public class PostsApiControllerTest {
 
         //when
         mvc.perform(post(url) // 1 기존 restTemplate 삭제 2 post는 MockMvcRequestBuilders에서 immport
-                        .contentType(MediaType.APPLICATION_JSON_UTF8) // mediaType deprecated
+                        .contentType(MediaType.APPLICATION_JSON)  //UTF8 deprecated
                         .content(new ObjectMapper().writeValueAsString(requestDto)))
                         .andExpect(status().isOk());
 
@@ -111,7 +111,7 @@ public class PostsApiControllerTest {
 
         //when
         mvc.perform(put(url)
-                        .contentType(MediaType.APPLICATION_JSON_UTF8)
+                        .contentType(MediaType.APPLICATION_JSON)
                         .content(new ObjectMapper().writeValueAsString(requestDto)))
                         .andExpect(status().isOk());
 
