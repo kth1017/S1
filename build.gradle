@@ -42,5 +42,5 @@ dependencies {
     runtimeOnly 'com.h2database:h2'
 
     // mariaDB
-    implementation("org.mariadb.jdbc:mariadb-dava-client")
+    implementation("org.mariadb.jdbc:mariadb-java-client")
 }
