@@ -40,4 +40,7 @@ dependencies {
     testImplementation('org.springframework.security:spring-security-test')
 
     runtimeOnly 'com.h2database:h2'
+
+    // mariaDB
+    implementation("org.mariadb.jdbc:mariadb-dava-client")
 }

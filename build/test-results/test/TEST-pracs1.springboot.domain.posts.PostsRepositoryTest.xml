@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="pracs1.springboot.domain.posts.PostsRepositoryTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-03-23T10:59:54" hostname="DESKTOP-U26GOSF" time="0.515">
+<testsuite name="pracs1.springboot.domain.posts.PostsRepositoryTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-03-31T09:51:13" hostname="DESKTOP-U26GOSF" time="0.75">
   <properties/>
-  <testcase name="게시글저장_불러오기()" classname="pracs1.springboot.domain.posts.PostsRepositoryTest" time="0.488"/>
-  <testcase name="BaseTimeEntity등록()" classname="pracs1.springboot.domain.posts.PostsRepositoryTest" time="0.025"/>
-  <system-out><![CDATA[19:59:45.122 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
-19:59:45.147 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
-19:59:45.215 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [pracs1.springboot.domain.posts.PostsRepositoryTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
-19:59:45.236 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [pracs1.springboot.domain.posts.PostsRepositoryTest], using SpringBootContextLoader
-19:59:45.243 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [pracs1.springboot.domain.posts.PostsRepositoryTest]: class path resource [pracs1/springboot/domain/posts/PostsRepositoryTest-context.xml] does not exist
-19:59:45.244 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [pracs1.springboot.domain.posts.PostsRepositoryTest]: class path resource [pracs1/springboot/domain/posts/PostsRepositoryTestContext.groovy] does not exist
-19:59:45.244 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [pracs1.springboot.domain.posts.PostsRepositoryTest]: no resource found for suffixes {-context.xml, Context.groovy}.
-19:59:45.246 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [pracs1.springboot.domain.posts.PostsRepositoryTest]: PostsRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-19:59:45.335 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [pracs1.springboot.domain.posts.PostsRepositoryTest]
-19:59:45.455 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [D:\pracs1\build\classes\java\main\pracs1\springboot\Application.class]
-19:59:45.457 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration pracs1.springboot.Application for test class pracs1.springboot.domain.posts.PostsRepositoryTest
-19:59:45.636 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [pracs1.springboot.domain.posts.PostsRepositoryTest]: using defaults.
-19:59:45.637 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener, org.springframework.security.test.context.support.ReactorContextTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
-19:59:45.674 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@1fac030d, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@23991f0, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@19b55111, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@22765279, org.springframework.test.context.support.DirtiesContextTestExecutionListener@5d3d8951, org.springframework.test.context.transaction.TransactionalTestExecutionListener@13453517, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@20cbd3b7, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener@30beb84d, org.springframework.test.context.event.EventPublishingTestExecutionListener@1f8c80a, org.springframework.security.test.context.support.ReactorContextTestExecutionListener@3b2fa8af, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@45879216, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@3e263b, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@474106ae, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@16da439, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@78838120, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@97d7ff5]
-19:59:45.680 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@68f1f950 testClass = PostsRepositoryTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@29ed9126 testClass = PostsRepositoryTest, locations = '{}', classes = '{class pracs1.springboot.Application}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@61e39a71, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@792e2e84, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@65cf6a5a, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@49083511, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@321e33b3, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@45bd1aa6], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true]], class annotated with @DirtiesContext [false] with mode [null].
-19:59:45.731 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}
+  <testcase name="게시글저장_불러오기()" classname="pracs1.springboot.domain.posts.PostsRepositoryTest" time="0.71"/>
+  <testcase name="BaseTimeEntity등록()" classname="pracs1.springboot.domain.posts.PostsRepositoryTest" time="0.037"/>
+  <system-out><![CDATA[18:51:02.869 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+18:51:02.893 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+18:51:02.968 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [pracs1.springboot.domain.posts.PostsRepositoryTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+18:51:02.989 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [pracs1.springboot.domain.posts.PostsRepositoryTest], using SpringBootContextLoader
+18:51:03.000 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [pracs1.springboot.domain.posts.PostsRepositoryTest]: class path resource [pracs1/springboot/domain/posts/PostsRepositoryTest-context.xml] does not exist
+18:51:03.012 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [pracs1.springboot.domain.posts.PostsRepositoryTest]: class path resource [pracs1/springboot/domain/posts/PostsRepositoryTestContext.groovy] does not exist
+18:51:03.013 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [pracs1.springboot.domain.posts.PostsRepositoryTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+18:51:03.015 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [pracs1.springboot.domain.posts.PostsRepositoryTest]: PostsRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+18:51:03.136 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [pracs1.springboot.domain.posts.PostsRepositoryTest]
+18:51:03.256 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [D:\pracs1\build\classes\java\main\pracs1\springboot\Application.class]
+18:51:03.258 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration pracs1.springboot.Application for test class pracs1.springboot.domain.posts.PostsRepositoryTest
+18:51:03.447 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [pracs1.springboot.domain.posts.PostsRepositoryTest]: using defaults.
+18:51:03.448 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener, org.springframework.security.test.context.support.ReactorContextTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+18:51:03.490 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@4db6a5e2, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@2186fe5b, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@26f143c0, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@6a3b4d74, org.springframework.test.context.support.DirtiesContextTestExecutionListener@12da6c64, org.springframework.test.context.transaction.TransactionalTestExecutionListener@4b83c42, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@28fb9056, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener@181b38d0, org.springframework.test.context.event.EventPublishingTestExecutionListener@5963cefb, org.springframework.security.test.context.support.ReactorContextTestExecutionListener@1cfca3b9, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@68f1f950, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@29ed9126, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@6e3e86f6, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@172601e3, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@70fa512e, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@355b9ab6]
+18:51:03.498 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@54d65d58 testClass = PostsRepositoryTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@5da161f8 testClass = PostsRepositoryTest, locations = '{}', classes = '{class pracs1.springboot.Application}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@4bbdd18a, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@4369e2f9, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@7107bed0, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@4931279c, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@a967436, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@45bd1aa6], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true]], class annotated with @DirtiesContext [false] with mode [null].
+18:51:03.556 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -28,25 +28,120 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v2.4.1)
 
-2022-03-23 19:59:46.285  INFO 2684 --- [    Test worker] p.s.domain.posts.PostsRepositoryTest     : Starting PostsRepositoryTest using Java 1.8.0_321 on DESKTOP-U26GOSF with PID 2684 (started by 권태현 in D:\pracs1)
-2022-03-23 19:59:46.290  INFO 2684 --- [    Test worker] p.s.domain.posts.PostsRepositoryTest     : No active profile set, falling back to default profiles: default
-2022-03-23 19:59:47.499  INFO 2684 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-03-23 19:59:47.615  INFO 2684 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 101 ms. Found 2 JPA repository interfaces.
-2022-03-23 19:59:48.906  INFO 2684 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-03-23 19:59:49.009  INFO 2684 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.25.Final
-2022-03-23 19:59:49.298  INFO 2684 --- [    Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-03-23 19:59:49.501  INFO 2684 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2022-03-23 19:59:49.615  INFO 2684 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2022-03-23 19:59:49.677  INFO 2684 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2022-03-23 19:59:50.871  INFO 2684 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-03-23 19:59:50.886  INFO 2684 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-03-23 19:59:51.715  WARN 2684 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-03-23 19:59:52.594  INFO 2684 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2751d886, org.springframework.security.web.context.SecurityContextPersistenceFilter@4c2dc362, org.springframework.security.web.header.HeaderWriterFilter@53abcf06, org.springframework.security.web.authentication.logout.LogoutFilter@12fa140e, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@aa462ae, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@11107846, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@1f243c49, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@16d9993d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@344a10a9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2fe85008, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@edade58, org.springframework.security.web.session.SessionManagementFilter@7a58c712, org.springframework.security.web.access.ExceptionTranslationFilter@662be748, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2d96b1e2]
-2022-03-23 19:59:53.559  INFO 2684 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2022-03-23 19:59:53.750  INFO 2684 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2022-03-23 19:59:54.414  INFO 2684 --- [    Test worker] s.a.ScheduledAnnotationBeanPostProcessor : No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
-2022-03-23 19:59:54.430  INFO 2684 --- [    Test worker] p.s.domain.posts.PostsRepositoryTest     : Started PostsRepositoryTest in 8.689 seconds (JVM running for 10.945)
->>>>>>>>> createDate=2022-03-23T19:59:54.957, modifiedDate=2022-03-23T19:59:54.957
+2022-03-31 18:51:04.161  INFO 26488 --- [    Test worker] p.s.domain.posts.PostsRepositoryTest     : Starting PostsRepositoryTest using Java 1.8.0_321 on DESKTOP-U26GOSF with PID 26488 (started by 권태현 in D:\pracs1)
+2022-03-31 18:51:04.165  INFO 26488 --- [    Test worker] p.s.domain.posts.PostsRepositoryTest     : No active profile set, falling back to default profiles: default
+2022-03-31 18:51:05.401  INFO 26488 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-03-31 18:51:05.526  INFO 26488 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 110 ms. Found 2 JPA repository interfaces.
+2022-03-31 18:51:06.855  INFO 26488 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-03-31 18:51:06.977  INFO 26488 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.25.Final
+2022-03-31 18:51:07.275  INFO 26488 --- [    Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-03-31 18:51:07.487  INFO 26488 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-03-31 18:51:07.707  INFO 26488 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-03-31 18:51:07.770  INFO 26488 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+Hibernate: 
+    
+    drop table if exists posts CASCADE 
+Hibernate: 
+    
+    drop table if exists user CASCADE 
+Hibernate: 
+    
+    create table posts (
+       id bigint generated by default as identity,
+        created_date timestamp,
+        modified_date timestamp,
+        author varchar(255),
+        content TEXT not null,
+        title varchar(500) not null,
+        primary key (id)
+    )
+Hibernate: 
+    
+    create table user (
+       id bigint generated by default as identity,
+        created_date timestamp,
+        modified_date timestamp,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        pictures varchar(255),
+        role varchar(255) not null,
+        primary key (id)
+    )
+2022-03-31 18:51:09.112  INFO 26488 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-03-31 18:51:09.129  INFO 26488 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-03-31 18:51:10.064  WARN 26488 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-31 18:51:11.214  INFO 26488 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@432f8547, org.springframework.security.web.context.SecurityContextPersistenceFilter@6b6924bf, org.springframework.security.web.header.HeaderWriterFilter@4bf41211, org.springframework.security.web.authentication.logout.LogoutFilter@69d6d40, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@7c4bc104, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@77863c61, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@5b091052, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@1233112, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3e09199, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5d6e8d1b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5e44854b, org.springframework.security.web.session.SessionManagementFilter@4f349e45, org.springframework.security.web.access.ExceptionTranslationFilter@779ff592, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@10310ac2]
+2022-03-31 18:51:12.294  INFO 26488 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-03-31 18:51:12.526  INFO 26488 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-03-31 18:51:13.536  INFO 26488 --- [    Test worker] s.a.ScheduledAnnotationBeanPostProcessor : No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2022-03-31 18:51:13.558  INFO 26488 --- [    Test worker] p.s.domain.posts.PostsRepositoryTest     : Started PostsRepositoryTest in 9.985 seconds (JVM running for 12.35)
+Hibernate: 
+    insert 
+    into
+        posts
+        (id, created_date, modified_date, author, content, title) 
+    values
+        (null, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        posts0_.id as id1_0_,
+        posts0_.created_date as created_2_0_,
+        posts0_.modified_date as modified3_0_,
+        posts0_.author as author4_0_,
+        posts0_.content as content5_0_,
+        posts0_.title as title6_0_ 
+    from
+        posts posts0_
+Hibernate: 
+    select
+        posts0_.id as id1_0_,
+        posts0_.created_date as created_2_0_,
+        posts0_.modified_date as modified3_0_,
+        posts0_.author as author4_0_,
+        posts0_.content as content5_0_,
+        posts0_.title as title6_0_ 
+    from
+        posts posts0_
+Hibernate: 
+    delete 
+    from
+        posts 
+    where
+        id=?
+Hibernate: 
+    insert 
+    into
+        posts
+        (id, created_date, modified_date, author, content, title) 
+    values
+        (null, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        posts0_.id as id1_0_,
+        posts0_.created_date as created_2_0_,
+        posts0_.modified_date as modified3_0_,
+        posts0_.author as author4_0_,
+        posts0_.content as content5_0_,
+        posts0_.title as title6_0_ 
+    from
+        posts posts0_
+>>>>>>>>> createDate=2022-03-31T18:51:14.313, modifiedDate=2022-03-31T18:51:14.313
+Hibernate: 
+    select
+        posts0_.id as id1_0_,
+        posts0_.created_date as created_2_0_,
+        posts0_.modified_date as modified3_0_,
+        posts0_.author as author4_0_,
+        posts0_.content as content5_0_,
+        posts0_.title as title6_0_ 
+    from
+        posts posts0_
+Hibernate: 
+    delete 
+    from
+        posts 
+    where
+        id=?
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
