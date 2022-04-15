@@ -3,8 +3,8 @@
 
 JAVA, Spring boot, JPA, thymeleaf, Mustache, AWS EC2 RDS, MariaDB
 
-ver 1.0.0
-# 책 내용 그대로 24시간 스크립트까지 완성
+
+# 책 내용 그대로 24시간 스크립트까지 완성 ver 1.0.0
 @ branch 'main' commit 
 
 
@@ -12,7 +12,7 @@ ver 1.0.0
 - mustache, h2
 
 ver 1.0.1
-# 템플릿 엔진 mustache > thymeleaf
+# 템플릿 엔진 mustache > thymeleaf ver 1.0.1
 @ branch 'custom' commit '타임리프 수정1'
 
 @ to be
