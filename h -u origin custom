@@ -1,0 +1,131 @@
+[33mcommit 0dd8384b402ca110860b92806bea7f36ca0976d4[m[33m ([m[1;36mHEAD -> [m[1;32mcustom[m[33m)[m
+Author: kth <rnjsxo1017@gmail.com>
+Date:   Fri Apr 15 20:18:46 2022 +0900
+
+    타임리프로 현재 페이지만 수정
+
+[33mcommit 4e2bba6a7760d1d5ea798c3e642d258a9d103e62[m[33m ([m[1;31morigin/master[m[33m, [m[1;32mmain[m[33m)[m
+Author: kth <rnjsxo1017@gmail.com>
+Date:   Fri Apr 8 17:22:15 2022 +0900
+
+    프로젝트 ~배포 완료
+
+[33mcommit bc89b4b2c12d7deb4ff33c4014b1491a1ff928f0[m
+Author: kth <rnjsxo1017@gmail.com>
+Date:   Wed Apr 6 15:50:04 2022 +0900
+
+    포트 수정
+
+[33mcommit ab6b9ba2d89f8184f538a25a3b2235a7c2aaf365[m
+Author: kth <rnjsxo1017@gmail.com>
+Date:   Tue Apr 5 23:20:38 2022 +0900
+
+    수정6
+
+[33mcommit 51d84a550117c25a25ecbfd30119e03a3229be22[m
+Author: kth <rnjsxo1017@gmail.com>
+Date:   Tue Apr 5 23:14:59 2022 +0900
+
+    수정
+
+[33mcommit 9b1d6808e42615969b0d3e7cc02ddb8fb37df57b[m
+Author: kth <rnjsxo1017@gmail.com>
+Date:   Tue Apr 5 23:01:00 2022 +0900
+
+    수정4
+
+[33mcommit 092f204a226ab5f09874837087c799881fdd972a[m
+Author: kth <rnjsxo1017@gmail.com>
+Date:   Tue Apr 5 22:58:58 2022 +0900
+
+    수정3
+
+[33mcommit 69cd1e35f71dfb0f598cfc4ff2bcdc6d2e7b4e8d[m
+Author: kth <rnjsxo1017@gmail.com>
+Date:   Tue Apr 5 22:29:30 2022 +0900
+
+    profile 수정2
+
+[33mcommit f2ef76644de23ee3e75f19b0cd564635acab10b7[m
+Author: kth <rnjsxo1017@gmail.com>
+Date:   Tue Apr 5 22:13:22 2022 +0900
+
+    profile 수정
+
+[33mcommit 80e56724cdff7dab93b3f569e76d56b274c8cd4e[m
+Author: kth <rnjsxo1017@gmail.com>
+Date:   Fri Apr 1 17:16:36 2022 +0900
+
+    테스트 다 비활
+
+[33mcommit 9874327dfdaa61ea517955c58adf10a7758c7bc9[m
+Author: kth <rnjsxo1017@gmail.com>
+Date:   Fri Apr 1 17:11:59 2022 +0900
+
+    실험3
+
+[33mcommit 6450ae336bc7e9df662e2264f9ca289a08ef5a3e[m
+Author: kth <rnjsxo1017@gmail.com>
+Date:   Fri Apr 1 16:51:23 2022 +0900
+
+    실험1
+
+[33mcommit 59023649649919507d29f7cd71cedd3d09e25131[m
+Author: kth <rnjsxo1017@gmail.com>
+Date:   Fri Apr 1 16:14:31 2022 +0900
+
+    real 설정파일까지
+
+[33mcommit e2b53b30bb3df942faf3dd6bf89e19a86a7c7774[m
+Author: kth <rnjsxo1017@gmail.com>
+Date:   Tue Mar 29 19:38:33 2022 +0900
+
+    네이버 로그인 수정
+
+[33mcommit 7599958912687aaaae422d8b744098d5e060e751[m
+Author: kth <rnjsxo1017@gmail.com>
+Date:   Mon Mar 28 19:55:32 2022 +0900
+
+    버그 수정
+
+[33mcommit 99ab91a631fc74e832a280df85ffe6acb57b845c[m
+Author: kth <rnjsxo1017@gmail.com>
+Date:   Fri Mar 25 15:38:41 2022 +0900
+
+    빌드 1차 완료
+
+[33mcommit a416f6e414c4006257bd471c54674f2c921b3b60[m
+Author: kth <rnjsxo1017@gmail.com>
+Date:   Fri Mar 25 13:45:55 2022 +0900
+
+    시큐리티 테스트 성공
+
+[33mcommit 7107407bfff8f33ddec8a99b2172486af113faef[m
+Author: kth <rnjsxo1017@gmail.com>
+Date:   Tue Mar 22 23:44:39 2022 +0900
+
+    네이버로그인까지
+
+[33mcommit f9901b2170366425f292064f05dcf691d5633b36[m
+Author: kth <rnjsxo1017@gmail.com>
+Date:   Sun Mar 20 17:26:25 2022 +0900
+
+    구글 로그인까지
+
+[33mcommit 6e800946bc15b057430167352d0d7c444eceef66[m
+Author: kth <rnjsxo1017@gmail.com>
+Date:   Sun Mar 20 16:07:52 2022 +0900
+
+    로그인1
+
+[33mcommit 97ec93579b83ce76b354362961c1378266ac2410[m
+Author: kth <rnjsxo1017@gmail.com>
+Date:   Sun Mar 20 15:47:47 2022 +0900
+
+    gitignore 추가
+
+[33mcommit b39fb44f0406d7b530e9dd78e324cff649a4e364[m
+Author: kth <rnjsxo1017@gmail.com>
+Date:   Fri Mar 18 21:52:34 2022 +0900
+
+    등록까지
