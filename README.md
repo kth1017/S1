@@ -7,7 +7,7 @@ JAVA, Spring boot, JPA, thymeleaf, Mustache, AWS EC2 RDS, MariaDB
 
 
 # 책 내용 그대로 24시간 스크립트까지 완성 ver 1.0.0
-@ branch 'main' commit 
+@ branch 'main' commit '프로젝트 배포완료'
 
 
 @ as is
