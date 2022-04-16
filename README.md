@@ -6,7 +6,7 @@ JAVA, Spring boot, JPA, thymeleaf, Mustache, AWS EC2 RDS, MariaDB
 서비스 주소 : https://bit.ly/3rlvLqF
 
 
-# 책 내용 그대로 24시간 스크립트까지 완성 ver 1.0.0
+# 책 부분 : ~ 24시간 배포 스크립트 완성 ver 1.0.0
 @ branch 'main' commit '프로젝트 배포완료'
 
 
