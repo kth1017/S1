@@ -28,7 +28,7 @@ public class IndexController { // view용 controller
         if (user != null) {
             model.addAttribute("userName", user.getName());
         }
-        return "index"; // starter 의존성으로 주소, 확장자 자동 추가
+        return "index2"; // starter 의존성으로 주소, 확장자 자동 추가
     }
 
     @GetMapping("/posts/save")

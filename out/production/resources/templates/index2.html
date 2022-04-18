@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>fadet's project Home</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Roboto+Condensed:wght@300&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Roboto+Condensed:wght@300&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100&display=swap');
+        body{
+            background-image: url("img/bg2.png");
+        }
+        header{
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            height: 120px;
+        }
+        h1{
+            display: inline-block;
+            /*font-family: 'Roboto Condensed', sans-serif;*/
+            font-family: 'IBM Plex Sans KR', sans-serif;;
+            color: white;
+            margin: 2rem;
+        }
+        nav{
+            display: inline-block;
+            vertical-align: bottom;
+            color: white;
+            margin: 2rem;
+        }
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        li {
+            flex-basis: 50%;
+        }
+        main{
+            background-color: rgba(0 , 0, 0, 0.3);
+            width: 100%;
+            min-height: 400px;
+        }
+        h2{
+            color: white;
+            font-family: 'IBM Plex Sans KR', sans-serif;
+            margin-left: 2%;
+        }
+        table.board{
+            margin-left: 5%;
+            color: white;
+            font-family: 'IBM Plex Sans KR', sans-serif;
+        }
+        footer{
+            background-color: rgba(0,0,0,0.3);
+            width: 100%;
+            height: 300px;
+        }
+        td.text{
+            color: white;
+            text-indent: 10px;
+        }
+        td.img{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1 class="title">fadet의 프로젝트 페이지입니다</h1>
+    <nav>
+        <ul>
+            <li>login as</li>
+            <li><img width="50px" height="50px" src="img/logo/naver.png" /> </li>
+            <li><img width="50px" height="50px" src="img/logo/google.png" /> </li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <h2><br></h2>
+    <h2>게시글</h2>
+    <table class="board">
+        <thead>
+        <tr>
+            <th>No</th>
+            <th >제목</th>
+            <th >작성자</th>
+            <th >최종수정일</th>
+        </tr>
+        </thead>
+        <tbody id="tbody">
+        <tr th:each="post : ${posts}">
+            <td>[[${post.id}]]</td>
+            <td th:width="30"><a th:href="@{/posts/update/{post.id}}">[[${post.title}]]</a></td>
+            <td th:width="10">[[${post.author}]]</td>
+            <td th:width="10">[[${post.modifiedDate}]]</td>
+        </tr>
+        </tbody>
+    </table>
+    <a href="/posts/save" role="button" class="btn btn-primary">글 등록</a>
+</main>
+<footer>
+    <h2>링크</h2>
+    <table style="margin-left: 3%">
+        <tr>
+            <td class="img"><img width="30px" height="30px" src="img/logo/nortion.png" /></td>
+            <td class="text"> bit.ly/3rlwOH7</td>
+        </tr>
+        <tr>
+            <td class="img"><img width="20px" height="20px" src="img/logo/githubB.png" /></td>
+            <td class="text"> github.com/kth1017</td>
+        </tr>
+        <tr>
+            <td class="img"><img width="20px" height="20px" src="img/logo/tistory2.png" /></td>
+            <td class="text"> fadet-coding.tistory.com</td>
+        </tr>
+    </table>
+</footer>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<!--index.js 추가-->
+<script src="/js/app/index.js"></script>
+</body>
+</html>
