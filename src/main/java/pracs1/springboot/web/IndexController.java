@@ -43,5 +43,4 @@ public class IndexController { // view용 controller
         return "posts-update";
     }
 
-
 }
