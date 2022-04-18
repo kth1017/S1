@@ -16,16 +16,13 @@ repositories {
 test { // (2)
     useJUnitPlatform()
 }
-
 dependencies {
     //(3)
     implementation('org.springframework.boot:spring-boot-starter-web')
     implementation('org.springframework.boot:spring-boot-starter-mustache')
     implementation('org.springframework.boot:spring-boot-starter-thymeleaf')
-<<<<<<< HEAD
     developmentOnly('org.springframework.boot:spring-boot-devtools')
-=======
->>>>>>> 12cd35b1115772e7742a4bd3290e9988b5ae6e9f
+
 
     // lombok
     implementation('org.projectlombok:lombok')
