@@ -6,67 +6,66 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" th:href="@{/css/index.css}"/>
 </head>
-
 <body>
-<header>
-    <h1 class="title">fadet의 프로젝트 페이지입니다</h1>
-    <nav>
-        <span style="font-family: 'Nanum Gothic', sans-serif;" th:if="${userName} != null"><span id="user">[[${userName}]]</span>(으)로 로그인 중입니다
-        <a href="/logout" class="btn btn-outline-light" role="button">Logout</a>
-        </span>
-        <ul th:if="${userName} == null">
-            <li>login as</li>
-            <li><a href="/oauth2/authorization/google"><img width="50px" height="50px" src="img/logo/google.png" /></a></li>
-            <li><a href="/oauth2/authorization/naver"><img width="50px" height="50px" src="img/logo/naver.png" /></a></li>
-        </ul>
-    </nav>
-</header>
-<main>
-    <p><br></p>
-    <div style="display: flex">
-    <h2 style="margin-right: 10px">게시글</h2><a href="/posts/save" role="button" class="btn btn-outline-light">글 등록</a>
-    </div>
-    <p><br></p>
-    <div class="row">
-        <div class="col-sm-6">
-            <table class="table table-hover" style="color: white">
-                <thead>
-                <tr>
-                    <th style="width: 1%;">No</th>
-                    <th style="width: 10%">제목</th>
-                    <th style="width: 5%;">작성자</th>
-                    <th style="width: 10%;">최종수정일</th>
-                </tr>
-                </thead>
-                <tbody id="tbody">
-                <tr th:each="post : ${posts}">
-                    <td style="width: 1%;">[[${post.id}]]</td>
-                    <td class="bold" style="width: 10%"><a th:href="@{/posts/update/{post.id}}">[[${post.title}]]</a></td>
-                    <td style="width: 5%">[[${post.author}]]</td>
-                    <td style="width: 10%">[[${post.modifiedDate}]]</td>
-                </tr>
-                </tbody>
-            </table>
+    <header>
+        <h1 class="title">fadet의 프로젝트 페이지입니다</h1>
+        <nav>
+            <span style="font-family: 'Nanum Gothic', sans-serif;" th:if="${userName} != null"><span id="user">[[${userName}]]</span>(으)로 로그인 중입니다
+            <a href="/logout" class="btn btn-outline-light" role="button">Logout</a>
+            </span>
+            <ul th:if="${userName} == null">
+                <li>login as</li>
+                <li><a href="/oauth2/authorization/google"><img width="50px" height="50px" src="img/logo/google.png" /></a></li>
+                <li><a href="/oauth2/authorization/naver"><img width="50px" height="50px" src="img/logo/naver.png" /></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <p><br></p>
+        <div style="display: flex">
+        <h2 style="margin-right: 10px">게시글</h2><a href="/posts/save" role="button" class="btn btn-outline-light">글 등록</a>
         </div>
-    </div>
-</main>
-<footer>
-    <h2>링크</h2>
-    <table style="margin-left: 3%">
-        <tr>
-            <td class="img"><img width="30px" height="30px" src="img/logo/nortion.png" /></td>
-            <td class="text"><a href="https://bit.ly/3rlwOH7">bit.ly/3rlwOH7</a></td>
-        </tr>
-        <tr>
-            <td class="img"><img width="20px" height="20px" src="img/logo/githubB.png" /></td>
-            <td class="text"><a href="https://github.com/kth1017">github.com/kth1017</a></td>
-        </tr>
-        <tr>
-            <td class="img"><img width="20px" height="20px" src="img/logo/tistory2.png" /></td>
-            <td class="text"><a href="https://fadet-coding.tistory.com">fadet-coding.tistory.com</a></td>
-        </tr>
-    </table>
-</footer>
+        <p><br></p>
+        <div class="row">
+            <div class="col-sm-6">
+                <table class="table table-hover" style="color: white">
+                    <thead>
+                    <tr>
+                        <th style="width: 1%;">No</th>
+                        <th style="width: 10%">제목</th>
+                        <th style="width: 5%;">작성자</th>
+                        <th style="width: 10%;">최종수정일</th>
+                    </tr>
+                    </thead>
+                    <tbody id="tbody">
+                    <tr th:each="post : ${posts}">
+                        <td style="width: 1%;">[[${post.id}]]</td>
+                        <td class="bold" style="width: 10%"><a th:href="@{/posts/update/{post.id}}">[[${post.title}]]</a></td>
+                        <td style="width: 5%">[[${post.author}]]</td>
+                        <td style="width: 10%">[[${post.modifiedDate}]]</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <h2>링크</h2>
+        <table style="margin-left: 3%">
+            <tr>
+                <td class="img"><img width="30px" height="30px" src="img/logo/nortion.png" /></td>
+                <td class="text"><a target="_blank" href="https://bit.ly/3rlwOH7">bit.ly/3rlwOH7</a></td>
+            </tr>
+            <tr>
+                <td class="img"><img width="20px" height="20px" src="img/logo/githubB.png" /></td>
+                <td class="text"><a target="_blank" href="https://github.com/kth1017">github.com/kth1017</a></td>
+            </tr>
+            <tr>
+                <td class="img"><img width="20px" height="20px" src="img/logo/tistory2.png" /></td>
+                <td class="text"><a target="_blank" href="https://fadet-coding.tistory.com">fadet-coding.tistory.com</a></td>
+            </tr>
+        </table>
+    </footer>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
