@@ -18,6 +18,13 @@ ver 1.0.1
 @ branch 'custom' commit '타임리프 수정1'
 
 @ to be
-- mutache 작성 내용 전부 as_is 폴더로 이동
+- mustache 작성 내용 전부 as_is 폴더로 이동
 - 작성된 3 페이지 thymeleaf로 변경
 - https://fadet-coding.tistory.com/27
+
+# 템플릿 엔진 mustache > thymeleaf ver 1.0.2
+@ branch 'custom' commit '스크립트 수정2'
+
+@to be
+- index.html 디자인 수정
+- 관련 링크 추가
