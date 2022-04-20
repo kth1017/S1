@@ -70,6 +70,18 @@ a:active {
 td.bold{
     font-weight: bold;
 }
+div.col-sm-6 table{
+    table-layout: fixed;
+}
+div.col-sm-6 th{
+    text-align: center;
+}
+div.col-sm-6 td{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 1px;
+}
 /* footer part */
 footer{
     background-color: rgba(0,0,0,0.3);

@@ -40,7 +40,7 @@
                     <tbody id="tbody">
                     <tr th:each="post : ${posts}">
                         <td style="width: 1%;">[[${post.id}]]</td>
-                        <td class="bold" style="width: 10%"><a th:href="@{/posts/update/{post.id}}">[[${post.title}]]</a></td>
+                        <td class="bold" style="width: 10%"><a th:href="@{/posts/update/{postId}(postId=${post.id})}">[[${post.title}]]</a></td>
                         <td style="width: 5%">[[${post.author}]]</td>
                         <td style="width: 10%">[[${post.modifiedDate}]]</td>
                     </tr>
