@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html th:fragment="layout (main)" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>fadet's project Home</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{/css/index.css}"/>
+</head>
+<body>
+<header>
+    <h1 class="title">fadet의 프로젝트 페이지입니다</h1>
+    <nav>
+            <span style="font-family: 'Nanum Gothic', sans-serif;" th:if="${userName} != null"><span id="user">[[${userName}]]</span>(으)로 로그인 중입니다
+            <a href="/logout" class="btn btn-outline-light" role="button">Logout</a>
+            </span>
+        <ul th:if="${userName} == null">
+            <li>login as</li>
+            <li><a href="/oauth2/authorization/google"><img width="50px" height="50px" src="img/logo/google.png" /></a></li>
+            <li><a href="/oauth2/authorization/naver"><img width="50px" height="50px" src="img/logo/naver.png" /></a></li>
+        </ul>
+    </nav>
+</header>
+<main th:replace="${main}">
+    <div>분할 영역</div>
+</main>
+<footer>
+    <h2>링크</h2>
+    <table style="margin-left: 3%">
+        <tr>
+            <td class="img"><img width="30px" height="30px" src="img/logo/nortion.png" /></td>
+            <td class="text"><a target="_blank" href="https://bit.ly/3rlwOH7">bit.ly/3rlwOH7</a></td>
+        </tr>
+        <tr>
+            <td class="img"><img width="20px" height="20px" src="img/logo/githubB.png" /></td>
+            <td class="text"><a target="_blank" href="https://github.com/kth1017">github.com/kth1017</a></td>
+        </tr>
+        <tr>
+            <td class="img"><img width="20px" height="20px" src="img/logo/tistory2.png" /></td>
+            <td class="text"><a target="_blank" href="https://fadet-coding.tistory.com">fadet-coding.tistory.com</a></td>
+        </tr>
+    </table>
+</footer>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<!--index.js 추가-->
+<script src="/js/app/index.js"></script>
+</body>
+</html>

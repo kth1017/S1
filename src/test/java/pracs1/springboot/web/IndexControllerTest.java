@@ -25,5 +25,13 @@ class IndexControllerTest {
         assertThat(body).contains("fadet의 프로젝트 페이지입니다");
     }
 
+    @Test
+    public void 글목록_로딩() {
+        //when
+        String body = this.restTemplate.getForObject("/posts-list", String.class); // 왜 this를 씀?
+        //then
+        assertThat(body).contains("글목록");
+    }
+
 
 }

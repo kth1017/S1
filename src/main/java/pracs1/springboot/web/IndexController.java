@@ -43,4 +43,12 @@ public class IndexController { // view용 controller
         return "posts-update";
     }
 
+    @GetMapping("/posts-list")
+    public String postsList(Model model, @LoginUser SessionUser user) {
+        model.addAttribute("posts", postsService.findAllDesc());
+        if (user != null) {
+            model.addAttribute("userName", user.getName());
+        }
+        return "posts-list";
+    }
 }

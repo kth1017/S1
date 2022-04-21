@@ -1,15 +1,15 @@
 <!DOCTYPE HTML>
-<html th:replace="~{template/layoutExtend/layoutFile :: layout(~{::main})}" xmlns:th="http://www.thymeleaf.org">
+<html th:replace="~{layout/layoutFile :: layout(~{::main})}" xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>index title</title>
 </head>
 <body>
-    <header>index header</header>
-    <main>
-        <p><br></p>
-        <div style="display: flex">
-        <h2 style="margin-right: 10px">게시글</h2><a href="/posts/save" role="button" class="btn btn-outline-light">글 등록</a>
-        </div>
+<header>index header</header>
+<main>
+    <p><br></p>
+    <div style="display: flex">
+        <h2 style="margin-right: 10px">글목록</h2><a href="/posts/save" role="button" class="btn btn-outline-light">글 등록</a>
+    </div>
         <p><br></p>
         <div class="row">
             <div class="col-sm-6">
@@ -33,7 +33,7 @@
                 </table>
             </div>
         </div>
-    </main>
-    <footer>index footer</footer>
+</main>
+<footer>index footer</footer>
 </body>
 </html>
