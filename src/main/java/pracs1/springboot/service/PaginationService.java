@@ -16,9 +16,8 @@ import java.util.stream.Collectors;
 public class PaginationService {
     private final PostsRepository postsRepository;
 
-    public List<PostsListResponseDto> indexPaginationCall(int pageSize) {
-        Pagination indexPagination = new Pagination(5, 1);
-        indexPagination.setPageSize(pageSize);
+    public List<PostsListResponseDto> indexPaginationCall() {
+        Pagination indexPagination = Pagination.indexPaginationCreate(5);
         return postsRepository.findAllDesc().stream()
                 .limit(indexPagination.getPageSize())
                 .map(PostsListResponseDto::new)

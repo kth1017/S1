@@ -10,29 +10,25 @@ import pracs1.springboot.config.auth.LoginUser;
 import pracs1.springboot.config.auth.dto.SessionUser;
 import pracs1.springboot.domain.posts.Posts;
 import pracs1.springboot.pagination.Pagination;
+import pracs1.springboot.service.PaginationService;
 import pracs1.springboot.service.posts.PostsService;
 import pracs1.springboot.web.dto.PostsListResponseDto;
 import pracs1.springboot.web.dto.PostsResponseDto;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Controller
 public class IndexController { // view용 controller
 
     private final PostsService postsService;
+    private final PaginationService paginationService;
 
     @GetMapping("/")
     public String index(Model model, @LoginUser SessionUser user) {
-        Pagination pagination = new Pagination(5, 1);
-        pagination.setPageSize(5);
-        List<PostsListResponseDto> indexPostsDtoList = postsService.findAllDesc().stream()
-                .limit(pagination.getPageSize())
-                .collect(Collectors.toList());
 
+        List<PostsListResponseDto> indexPostsDtoList = paginationService.indexPaginationCall();
         model.addAttribute("posts", indexPostsDtoList);
-
 //        SessionUser user = (SessionUser) httpSession.getAttribute("user"); // 로그인 성공시 객체 생성 > 코드 리팩토링
 
         if (user != null) {

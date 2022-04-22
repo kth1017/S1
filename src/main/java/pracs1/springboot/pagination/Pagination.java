@@ -81,4 +81,12 @@ public class Pagination {
         setStartIndex((page - 1) * pageSize);
     }
 
+    /*
+    메서드
+     */
+    public static Pagination indexPaginationCreate(int pageSize) {
+        Pagination indexPagination = new Pagination(5, 1);
+        indexPagination.setPageSize(pageSize);
+        return indexPagination;
+    }
 }
