@@ -1,7 +1,10 @@
 <!DOCTYPE HTML>
-<html th:replace="~{layout/layoutFile :: layout(~{::main})}" xmlns:th="http://www.thymeleaf.org">
+<html th:replace="~{layout/layoutFile :: layout(~{::head}, ~{::main})}" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>index title</title>
+    <title>fadet's project Home</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{/css/postsList.css}"/>
 </head>
 <body>
 <header>index header</header>

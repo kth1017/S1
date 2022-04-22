@@ -1,10 +1,9 @@
 <!DOCTYPE HTML>
-<html th:fragment="layout (main)" xmlns:th="http://www.thymeleaf.org">
-<head>
+<html th:fragment="layout (head, main)" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="${head}">
     <title>fadet's project Home</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" th:href="@{/css/index.css}"/>
 </head>
 <body>
 <header>

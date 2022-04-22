@@ -9,12 +9,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import pracs1.springboot.config.auth.LoginUser;
 import pracs1.springboot.config.auth.dto.SessionUser;
 import pracs1.springboot.domain.posts.Posts;
-import pracs1.springboot.domain.posts.pagination.Pagination;
+import pracs1.springboot.pagination.Pagination;
 import pracs1.springboot.service.posts.PostsService;
 import pracs1.springboot.web.dto.PostsListResponseDto;
 import pracs1.springboot.web.dto.PostsResponseDto;
 
-import javax.servlet.http.HttpSession;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -28,11 +27,11 @@ public class IndexController { // view용 controller
     public String index(Model model, @LoginUser SessionUser user) {
         Pagination pagination = new Pagination(5, 1);
         pagination.setPageSize(5);
-        List<PostsListResponseDto> posts = postsService.findAllDesc().stream()
+        List<PostsListResponseDto> indexPostsDtoList = postsService.findAllDesc().stream()
                 .limit(pagination.getPageSize())
                 .collect(Collectors.toList());
 
-        model.addAttribute("posts", posts);
+        model.addAttribute("posts", indexPostsDtoList);
 
 //        SessionUser user = (SessionUser) httpSession.getAttribute("user"); // 로그인 성공시 객체 생성 > 코드 리팩토링
 
@@ -65,13 +64,9 @@ public class IndexController { // view용 controller
         페이징 처리
          */
 
-        // 총 게시물 수
         int totalListCnt = postsService.findAllDesc().size();
-        // 생성인자로  총 게시물 수, 현재 페이지를 전달
         Pagination pagination = new Pagination(totalListCnt, page);
-        // DB select start index
         int startIndex = pagination.getStartIndex();
-        // 페이지 당 보여지는 게시글의 최대 개수
         int pageSize = pagination.getPageSize();
 
         List<Posts> postsList = postsService.findListpaging(startIndex, pageSize);
