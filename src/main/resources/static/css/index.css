@@ -42,18 +42,16 @@ li {
 /* content part */
 main{
     background-color: rgba(0, 0, 0, 0.3);
-    width: 100%;
-    min-height: 400px;
+    width: 100%; min-height: 400px;
 }
 h2{
-    color: white;
-    font-family: 'IBM Plex Sans KR', sans-serif;
+    color: white; font-family: 'IBM Plex Sans KR', sans-serif;
     margin-left: 2%;
 }
 div.row{
+    text-align: center;
     margin-left: 5%;
-    color: white;
-    font-family: 'IBM Plex Sans KR', sans-serif;
+    color: white; font-family: 'IBM Plex Sans KR', sans-serif;
 }
 h1 a:link {
     color : white;

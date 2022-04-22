@@ -4,36 +4,26 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100&display=swap');
 /* body part */
 body {
-    background-image: url("/img/bg2.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    background-image: url("/img/bg2.png"); background-repeat: no-repeat; background-size: cover; background-position: center;
 }
 /* header part */
 header{
     background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    height: 120px;
+    display: flex; justify-content: space-between;
+    width: 100%; height: 120px;
 }
 h1{
-    display: inline-block;
-    /*font-family: 'Roboto Condensed', sans-serif;*/
-    font-family: 'IBM Plex Sans KR', sans-serif;;
-    color: white;
-    margin: 2rem;
+    display: inline-block; margin: 2rem;
+    font-family: 'IBM Plex Sans KR', sans-serif; color: white;
+
 }
 nav{
-    display: inline-block;
-    vertical-align: bottom;
+    display: inline-block; vertical-align: bottom; margin: 2rem;
     color: white;
-    margin: 2rem;
 }
 ul {
     list-style: none;
-    margin: 0;
-    padding: 0;
+    margin: 0;  padding: 0;
     display: flex;
 }
 li {
@@ -52,8 +42,19 @@ h2{
 }
 div.row{
     margin-left: 5%;
+    color: white; font-family: 'IBM Plex Sans KR', sans-serif;
+    text-align: center;
+}
+nav.paging{
+    margin-left: 300px; padding: 10px;
+    border: 1px ridge white;
+    text-align: center;
+}
+nav.paging a{
     color: white;
-    font-family: 'IBM Plex Sans KR', sans-serif;
+}
+nav.paging li{
+    width: 40px;
 }
 h1 a:link {
     color : white;
@@ -73,7 +74,7 @@ div.col-sm-6 table{
 div.col-sm-6 th{
     text-align: center;
 }
-div.col-sm-6 td{
+div.col-sm-8 td{
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
@@ -91,8 +92,7 @@ table a:hover {
 /* footer part */
 footer{
     background-color: rgba(0,0,0,0.3);
-    width: 100%;
-    height: 2500px;
+    width: 100%; height: 2500px;
 }
 td.text{
     color: white;

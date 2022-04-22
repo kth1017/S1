@@ -13,60 +13,62 @@
     <div style="display: flex">
         <h2 style="margin-right: 10px">글목록</h2><a href="/posts/save" role="button" class="btn btn-outline-light">글 등록</a>
     </div>
-        <p><br></p>
-        <div class="row">
-            <div class="col-sm-6">
-                <table class="table table-hover" style="color: white">
-                    <thead>
-                    <tr>
-                        <th style="width: 2%;">No</th>
-                        <th style="width: 10%">제목</th>
-                        <th style="width: 5%;">작성자</th>
-                        <th style="width: 10%;">최종수정일</th>
-                    </tr>
-                    </thead>
-                    <tbody id="tbody">
-                    <tr th:each="post : ${postsList}">
-                        <td style="width: 2%;">[[${post.id}]]</td>
-                        <td class="bold" style="width: 10%"><a th:href="@{/posts/update/{postId}(postId=${post.id})}">[[${post.title}]]</a></td>
-                        <td style="width: 5%">[[${post.author}]]</td>
-                        <td style="width: 10%">[[${post.modifiedDate}]]</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
+    <p><br></p>
+    <div class="row">
+        <div class="col-sm-8">
+            <table class="table table-hover" style="color: white">
+                <thead>
+                <tr>
+                    <th style="width: 2%;">No</th>
+                    <th style="width: 10%">제목</th>
+                    <th style="width: 10%">내용</th>
+                    <th style="width: 5%;">작성자</th>
+                    <th style="width: 10%;">최종수정일</th>
+                </tr>
+                </thead>
+                <tbody id="tbody">
+                <tr th:each="post : ${postsList}">
+                    <td style="width: 2%;">[[${post.id}]]</td>
+                    <td class="bold" style="width: 10%"><a th:href="@{/posts/update/{postId}(postId=${post.id})}">[[${post.title}]]</a></td>
+                    <td class="bold" style="width: 10%"><a th:href="@{/posts/update/{postId}(postId=${post.id})}">[[${post.content}]]</a></td>
+                    <td style="width: 5%">[[${post.author}]]</td>
+                    <td style="width: 10%">[[${post.modifiedDate}]]</td>
+                </tr>
+                </tbody>
+            </table>
         </div>
-    <nav style="margin-left: 220px" aria-label="Page navigation example ">
-        <ul class="pagination">
-            <li class="page-item">
-                <a class="page-link" th:href="@{/posts-list/?page=1}" aria-label="Previous">
+    </div>
+    <nav class="paging" aria-label="Page navigation example ">
+        <ul>
+            <li>
+                <a th:href="@{/posts-list/?page=1}" aria-label="Previous">
                     <span aria-hidden="true">처음</span>
                 </a>
             </li>
-            <li class="page-item">
-                <a class="page-link" th:href="@{posts-list/?page={page} (page = ${pagination.prevBlock})}" aria-label="Previous">
+            <li>
+                <a th:href="@{posts-list/?page={page} (page = ${pagination.prevBlock})}" aria-label="Previous">
                     <span aria-hidden="true">이전</span>
                 </a>
             </li>
             <th:block  th:with="start = ${pagination.startPage}, end = ${pagination.endPage}">
-                <li class="page-item"
+                <li
                     th:with="start = ${pagination.startPage}, end = ${pagination.endPage}"
                     th:each="pageButton : ${#numbers.sequence(start, end)}">
-                    <a class="page-link" th:href="@{/posts-list/?page={page} (page = ${pageButton})}" th:text=${pageButton}></a>
+                    <a th:href="@{/posts-list/?page={page} (page = ${pageButton})}" th:text=${pageButton}></a>
                 </li>
             </th:block>
-            <li class="page-item">
-                <a class="page-link" th:href="@{/posts-list/?page={page} (page = ${pagination.nextBlock})}" aria-label="Next">
+            <li>
+                <a th:href="@{/posts-list/?page={page} (page = ${pagination.nextBlock})}" aria-label="Next">
                     <span aria-hidden="true">다음</span>
                 </a>
             </li>
-            <li class="page-item">
-                <a class="page-link" th:href="@{/posts-list/?page={page} (page = ${pagination.totalPageCnt})}" aria-label="Previous">
+            <li>
+                <a th:href="@{/posts-list/?page={page} (page = ${pagination.totalPageCnt})}" aria-label="Previous">
                     <span aria-hidden="true">끝</span>
                 </a>
             </li>
         </ul>
-    </nav>
+    </nav>1
 </main>
 <footer>index footer</footer>
 </body>
