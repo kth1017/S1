@@ -65,7 +65,7 @@ public class IndexController { // view용 controller
         int startIndex = pagination.getStartIndex();
         int pageSize = pagination.getPageSize();
 
-        List<Posts> postsList = postsService.findListpaging(startIndex, pageSize);
+        List<PostsListResponseDto> postsList = postsService.findListpaging(startIndex, pageSize);
         model.addAttribute("postsList", postsList);
         model.addAttribute("pagination", pagination);
 

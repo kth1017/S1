@@ -55,10 +55,11 @@ public class PostsService {
     }
 
     @Transactional
-    public List<Posts> findListpaging(int startindex, int pagesize) {
+    public List<PostsListResponseDto> findListpaging(int startindex, int pagesize) {
         return postsRepository.findAllDesc().stream()
                 .skip(startindex)
                 .limit(pagesize)
+                .map(PostsListResponseDto::new)
                 .collect(Collectors.toList());
 
     }

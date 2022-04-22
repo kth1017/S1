@@ -59,26 +59,16 @@ public class Pagination {
         /** 9. 블럭 마지막 페이지 **/
         setEndPage(startPage + blockSize - 1);
 
-        /* === 블럭 마지막 페이지에 대한 validation ===*/
-        if (endPage > totalPageCnt) {
-            this.endPage = totalPageCnt;
-        }
         /** 11. 이전 블럭(클릭 시, 이전 블럭 마지막 페이지) **/
         setPrevBlock((block * blockSize) - blockSize);
 
-        /* === 이전 블럭에 대한 validation === */
-        if (prevBlock < 1) {
-            this.prevBlock = 1;
-        }
         /** 12. 다음 블럭(클릭 시, 다음 블럭 첫번째 페이지) **/
         setNextBlock((block * blockSize) + 1);
 
-        /* === 다음 블럭에 대한 validation ===*/
-        if (nextBlock > totalPageCnt) {
-            nextBlock = totalPageCnt;
-        }
         /** 10. DB 접근 시작 index **/
         setStartIndex((page - 1) * pageSize);
+
+        validationRun();
     }
 
     /*
@@ -88,5 +78,28 @@ public class Pagination {
         Pagination indexPagination = new Pagination(5, 1);
         indexPagination.setPageSize(pageSize);
         return indexPagination;
+    }
+    /*
+    검증
+     */
+    public void validationRun(){
+        validationEndPage();
+        validationNextBlock();
+        validationPreBlock();
+    }
+    public void validationEndPage() {
+        if (endPage > totalPageCnt) {
+            this.endPage = totalPageCnt;
+        }
+    }
+    public void validationPreBlock() {
+        if (prevBlock < 1) {
+            this.prevBlock = 1;
+        }
+    }
+    public void validationNextBlock() {
+        if (nextBlock > totalPageCnt) {
+            nextBlock = totalPageCnt;
+        }
     }
 }
