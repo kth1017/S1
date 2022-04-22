@@ -16,7 +16,7 @@
                     <table class="table table-hover" style="color: white">
                         <thead>
                         <tr>
-                            <th style="width: 1%;">No</th>
+                            <th style="width: 2%;">No</th>
                             <th style="width: 10%">제목</th>
                             <th style="width: 5%;">작성자</th>
                             <th style="width: 10%;">최종수정일</th>
@@ -24,7 +24,7 @@
                         </thead>
                         <tbody id="tbody">
                         <tr th:each="post : ${posts}">
-                            <td style="width: 1%;">[[${post.id}]]</td>
+                            <td style="width: 2%;">[[${post.id}]]</td>
                             <td class="bold" style="width: 10%"><a th:href="@{/posts/update/{postId}(postId=${post.id})}">[[${post.title}]]</a></td>
                             <td style="width: 5%">[[${post.author}]]</td>
                             <td style="width: 10%">[[${post.modifiedDate}]]</td>

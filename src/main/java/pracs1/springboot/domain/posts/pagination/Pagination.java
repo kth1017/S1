@@ -80,4 +80,5 @@ public class Pagination {
         /** 10. DB 접근 시작 index **/
         setStartIndex((page - 1) * pageSize);
     }
+
 }

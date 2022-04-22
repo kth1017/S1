@@ -53,4 +53,16 @@ public class PostsService {
 
         postsRepository.delete(posts);
     }
+
+    @Transactional
+    public List<Posts> findListpaging(int startindex, int pagesize) {
+        return postsRepository.findAllDesc().stream()
+                .skip(startindex)
+                .limit(pagesize)
+                .collect(Collectors.toList());
+
+    }
+
+
+
 }

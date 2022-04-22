@@ -55,17 +55,14 @@ div.row{
     color: white;
     font-family: 'IBM Plex Sans KR', sans-serif;
 }
-a:link {
+h1 a:link {
     color : white;
 }
-a:visited {
+h1 a:visited {
     color : white;
 }
-a:hover {
-    color : blue;
-}
-a:active {
-    color : green
+h1 a:hover {
+    color : white;
 }
 td.bold{
     font-weight: bold;
@@ -82,6 +79,15 @@ div.col-sm-6 td{
     white-space: nowrap;
     max-width: 1px;
 }
+table a:link {
+    color : white;
+}
+table a:visited {
+    color : white;
+}
+table a:hover {
+    color : blue;
+}
 /* footer part */
 footer{
     background-color: rgba(0,0,0,0.3);
@@ -94,4 +100,13 @@ td.text{
 }
 td.img{
     float: right;
+}
+td.text a:link {
+    color : white;
+}
+td.text a:visited {
+    color : white;
+}
+td.text a:hover {
+    color : blue;
 }
