@@ -17,6 +17,7 @@ import pracs1.springboot.web.dto.PostsListResponseDto;
 import pracs1.springboot.web.dto.PostsResponseDto;
 
 import java.util.List;
+import java.util.Map;
 
 @RequiredArgsConstructor
 @Controller
@@ -53,7 +54,7 @@ public class IndexController { // view용 controller
 
     @GetMapping("/posts-list")
     public String postsList(Model model, @LoginUser SessionUser user, @RequestParam(defaultValue = "1") int page) {
-        model.addAttribute("posts", postsService.findAllDesc());
+
         if (user != null) {
             model.addAttribute("userName", user.getName());
         }
@@ -81,14 +82,10 @@ public class IndexController { // view용 controller
             model.addAttribute("userName", user.getName());
         }
 
-        int totalListCnt = postsSearchService.findSearchTitleDesc(keyword).size();
-        Pagination pagination = new Pagination(totalListCnt, page);
-        int startIndex = pagination.getStartIndex();
-        int pageSize = pagination.getPageSize();
+        Pagination pagination = postsService.findPagination(keyword, page);
 
-        List<PostsListResponseDto> postsList = postsSearchService.findTitleListpaging(startIndex, pageSize, keyword);
+        model.addAttribute("postsList", postsService.findByPagination(pagination, keyword));
         model.addAttribute("pagination", pagination);
-        model.addAttribute("postsList", postsList);
 
         return "posts-searchList";
     }
