@@ -68,7 +68,17 @@
                 </a>
             </li>
         </ul>
-    </nav>1
+    </nav>
+    <form action="./list" id="frm">
+        <input type="hidden" name="pageNum" value="1" id="pageNum">
+        <select name="type" id="type">
+            <option class="s" value="title">제목</option>
+            <option class="s" value="contents">내용</option>
+            <option class="s" value="writer">작성자</option>
+        </select>
+        <input type="text" name="search" id="search" value="${pager.search}">
+        <button type="submit" id="btn-search">검색</button>
+    </form>
 </main>
 <footer>index footer</footer>
 </body>

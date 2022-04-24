@@ -33,11 +33,8 @@ public class Pagination {
     private int nextBlock;
 
     public Pagination(int totalListCnt, int page) {
-
         // 총 게시물 수와 현재 페이지를 Controller로 부터 받아온다.
 
-        // 총 게시물 수	- totalListCnt
-        // 현재 페이지	- page
         /** 3. 현재 페이지 **/
         setPage(page);
         /** 5. 총 게시글 수 **/
