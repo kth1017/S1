@@ -36,6 +36,19 @@
                     </table>
                 </div>
             </div>
+        <form action="/search" method="GET">
+            <input type="hidden" name="pageNum" value="1" id="pageNum">
+            <select name="type" id="type">
+                <option class="s" value="title">제목</option>
+                <option class="s" value="content">내용</option>
+                <option class="s" value="titleOrContent">제목+내용</option>
+                <option class="s" value="author">작성자</option>
+            </select>
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <input name="keyword" type="text" placeholder="검색어를 입력해주세요">
+                <button class="btn btn-secondary">검색</button>
+            </div>
+        </form>
     </main>
     <footer>index footer</footer>
 </body>

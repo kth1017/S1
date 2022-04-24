@@ -1,24 +1,24 @@
 var main = {
     init : function () {
         var _this = this;
-        $('#btn-keyword').on('click', function () {
-            _this.keyword();
+        $('#btn-search').on('click', function () {
+            _this.search();
         });
     },
-    keyword : function () {
+    search : function () {
         var data = {
             type: $('#type').val(),
             keyword: $('#keyword').val(),
         };
         $.ajax({
             type: 'GET',
-            url: '/api/v1/posts',
+            url: '/api/search',
             dataType: 'json',
             contentType:'application/json; charset=utf-8',
             data: JSON.stringify(data)
         }).done(function() {
-            alert('글이 등록되었습니다.');
-            window.location.href = '/posts/save';
+            alert('검색 완료');
+            window.location.href = '/posts-list/search';
         }).fail(function (error) {
             alert(JSON.stringify(error));
         });

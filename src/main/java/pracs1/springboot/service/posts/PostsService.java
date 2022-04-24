@@ -52,6 +52,7 @@ public class PostsService {
                 .orElseThrow(() -> new IllegalArgumentException("게시글 없음 id=" + id));
 
         postsRepository.delete(posts);
+
     }
 
     @Transactional
@@ -64,6 +65,10 @@ public class PostsService {
 
     }
 
-
-
+    @Transactional
+    public List<PostsListResponseDto> findAllByTitleSearch(String keyword) {
+        return postsRepository.findByTitleContaining(keyword).stream()
+                .map(PostsListResponseDto::new)
+                .collect(Collectors.toList());
+    }
 }

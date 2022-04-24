@@ -11,6 +11,7 @@ import pracs1.springboot.config.auth.dto.SessionUser;
 import pracs1.springboot.domain.posts.Posts;
 import pracs1.springboot.pagination.Pagination;
 import pracs1.springboot.service.PaginationService;
+import pracs1.springboot.service.posts.PostsSearchService;
 import pracs1.springboot.service.posts.PostsService;
 import pracs1.springboot.web.dto.PostsListResponseDto;
 import pracs1.springboot.web.dto.PostsResponseDto;
@@ -23,6 +24,7 @@ public class IndexController { // view용 controller
 
     private final PostsService postsService;
     private final PaginationService paginationService;
+    private final PostsSearchService postsSearchService;
 
     @GetMapping("/")
     public String index(Model model, @LoginUser SessionUser user) {
@@ -70,5 +72,24 @@ public class IndexController { // view용 controller
         model.addAttribute("pagination", pagination);
 
         return "posts-list";
+    }
+
+    @GetMapping("/search")
+    public String postsSearchList(Model model, @LoginUser SessionUser user,
+                                  @RequestParam(defaultValue = "1") int page, String keyword, String type) {
+        if (user != null) {
+            model.addAttribute("userName", user.getName());
+        }
+
+        int totalListCnt = postsSearchService.findSearchTitleDesc(keyword).size();
+        Pagination pagination = new Pagination(totalListCnt, page);
+        int startIndex = pagination.getStartIndex();
+        int pageSize = pagination.getPageSize();
+
+        List<PostsListResponseDto> postsList = postsSearchService.findTitleListpaging(startIndex, pageSize, keyword);
+        model.addAttribute("pagination", pagination);
+        model.addAttribute("postsList", postsList);
+
+        return "posts-searchList";
     }
 }

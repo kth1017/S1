@@ -14,6 +14,7 @@ import java.util.stream.Collectors;
 @Service
 @Transactional(readOnly = true)
 public class PaginationService {
+
     private final PostsRepository postsRepository;
 
     public List<PostsListResponseDto> indexPaginationCall() {
