@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import pracs1.springboot.config.auth.LoginUser;
 import pracs1.springboot.config.auth.dto.SessionUser;
-import pracs1.springboot.domain.posts.Posts;
 import pracs1.springboot.pagination.Pagination;
+import pracs1.springboot.search.object.SearchResultDto;
 import pracs1.springboot.service.PaginationService;
 import pracs1.springboot.service.posts.PostsSearchService;
 import pracs1.springboot.service.posts.PostsService;
@@ -17,7 +17,6 @@ import pracs1.springboot.web.dto.PostsListResponseDto;
 import pracs1.springboot.web.dto.PostsResponseDto;
 
 import java.util.List;
-import java.util.Map;
 
 @RequiredArgsConstructor
 @Controller
@@ -82,10 +81,12 @@ public class IndexController { // view용 controller
             model.addAttribute("userName", user.getName());
         }
 
-        Pagination pagination = postsService.findPagination(keyword, page);
+        SearchResultDto searchPostsResult = postsService.findSearchListByType(page, type, keyword);
 
-        model.addAttribute("postsList", postsService.findByPagination(pagination, keyword));
-        model.addAttribute("pagination", pagination);
+        model.addAttribute("postsList", searchPostsResult.getSearchPostsListPaging());
+        model.addAttribute("pagination", searchPostsResult.getPagination());
+        model.addAttribute("type", searchPostsResult.getType());
+        model.addAttribute("keyword", searchPostsResult.getKeyword());
 
         return "posts-searchList";
     }

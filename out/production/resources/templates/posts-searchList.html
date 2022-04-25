@@ -12,6 +12,19 @@
     <p><br></p>
     <div style="display: flex">
         <h2 style="margin-right: 10px">글목록</h2><a href="/posts/save" role="button" class="btn btn-outline-light">글 등록</a>
+        <form action="/search" method="GET">
+            <input type="hidden" name="page" value="1" id="pageNum">
+            <select name="type" id="type">
+                <option class="s" value="title">제목</option>
+                <option class="s" value="content">내용</option>
+                <option class="s" value="titleOrContent">제목+내용</option>
+                <option class="s" value="author">작성자</option>
+            </select>
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <input name="keyword" type="text" placeholder="검색어를 입력해주세요">
+                <button class="btn btn-secondary">검색</button>
+            </div>
+        </form>
     </div>
     <p><br></p>
     <div class="row">
@@ -38,15 +51,16 @@
             </table>
         </div>
     </div>
+
     <nav class="paging" aria-label="Page navigation example ">
         <ul>
             <li>
-                <a th:href="@{/posts-list/?page=1}" aria-label="Previous">
+                <a th:href="@{/search/?page=1&type={type}&keyword={keyword} (type = ${type}, keyword = ${keyword})}" aria-label="Previous">
                     <span aria-hidden="true">처음</span>
                 </a>
             </li>
             <li>
-                <a th:href="@{/posts-list/?page={page} (page = ${pagination.prevBlock})}" aria-label="Previous">
+                <a th:href="@{/search/?page={page}&type={type}&keyword={keyword} (page = ${pagination.prevBlock}, type = ${type}, keyword = ${keyword})}" aria-label="Previous">
                     <span aria-hidden="true">이전</span>
                 </a>
             </li>
@@ -54,31 +68,21 @@
                 <li
                     th:with="start = ${pagination.startPage}, end = ${pagination.endPage}"
                     th:each="pageButton : ${#numbers.sequence(start, end)}">
-                    <a th:href="@{/posts-list/?page={page} (page = ${pageButton})}" th:text=${pageButton}></a>
+                    <a th:href="@{/search/?page={page}&type={type}&keyword={keyword} (page = ${pageButton}, type = ${type}, keyword = ${keyword})}" th:text=${pageButton}></a>
                 </li>
             </th:block>
             <li>
-                <a th:href="@{/posts-list/?page={page} (page = ${pagination.nextBlock})}" aria-label="Next">
+                <a th:href="@{/search/?page={page}&type={type}&keyword={keyword} (page = ${pagination.nextBlock}, type = ${type}, keyword = ${keyword})}" aria-label="Next">
                     <span aria-hidden="true">다음</span>
                 </a>
             </li>
             <li>
-                <a th:href="@{/posts-list/?page={page} (page = ${pagination.totalPageCnt})}" aria-label="Previous">
+                <a th:href="@{/search/?page={page}&type={type}&keyword={keyword} (page = ${pagination.totalPageCnt}, type = ${type}, keyword = ${keyword})}" aria-label="Previous">
                     <span aria-hidden="true">끝</span>
                 </a>
             </li>
         </ul>
     </nav>
-    <form action="./list" id="frm">
-        <input type="hidden" name="pageNum" value="1" id="pageNum">
-        <select name="type" id="type">
-            <option class="s" value="title">제목</option>
-            <option class="s" value="contents">내용</option>
-            <option class="s" value="writer">작성자</option>
-        </select>
-        <input type="text" name="search" id="search" value="${search.keyword}">
-        <button type="submit" id="btn-search">검색</button>
-    </form>
 </main>
 <footer>index footer</footer>
 </body>

@@ -5,16 +5,14 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pracs1.springboot.domain.posts.Posts;
 import pracs1.springboot.domain.posts.PostsRepository;
-import pracs1.springboot.pagination.Pagination;
-import pracs1.springboot.seach.dto.PostsSearchRequestDto;
+import pracs1.springboot.search.object.PostsSearchVo;
+import pracs1.springboot.search.object.SearchResultDto;
 import pracs1.springboot.web.dto.PostsListResponseDto;
 import pracs1.springboot.web.dto.PostsResponseDto;
 import pracs1.springboot.web.dto.PostsSaveRequestDto;
 import pracs1.springboot.web.dto.PostsUpdateRequestDto;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
@@ -76,21 +74,28 @@ public class PostsService {
                 .collect(Collectors.toList());
     }
 
-    @Transactional
-    public Pagination findPagination(String keyword, int page) {
-        int totalListCnt = postsRepository.findByTitleContaining(keyword).size();
-        PostsSearchRequestDto dto = new PostsSearchRequestDto(totalListCnt, page);
-        return dto.SearchCalcul();
-    }
+//    @Transactional
+//    public Pagination findPagination(String keyword, int page) {
+//        int totalListCnt = postsRepository.findByTitleContaining(keyword).size();
+//        PostsSearchVo dto = new PostsSearchVo(totalListCnt, page);
+//        return dto.SearchCalcul();
+//    }
+//
+//    @Transactional
+//    public List<PostsListResponseDto> findByPagination(Pagination pagination, String keyword) {
+//        int startindex = pagination.getStartIndex();
+//        int pageSize = pagination.getPageSize();
+//        return postsRepository.findByTitleContaining(keyword).stream()
+//                .skip(startindex)
+//                .limit(pageSize)
+//                .map(PostsListResponseDto::new)
+//                .collect(Collectors.toList());
+//    }
 
     @Transactional
-    public List<PostsListResponseDto> findByPagination(Pagination pagination, String keyword) {
-        int startindex = pagination.getStartIndex();
-        int pageSize = pagination.getPageSize();
-        return postsRepository.findByTitleContaining(keyword).stream()
-                .skip(startindex)
-                .limit(pageSize)
-                .map(PostsListResponseDto::new)
-                .collect(Collectors.toList());
+    public SearchResultDto findSearchListByType(int page, String type, String keyword) {
+        PostsSearchVo postsSearchVo = new PostsSearchVo(postsRepository);
+        SearchResultDto dto = postsSearchVo.findSearchPostsList(page, type, keyword);
+        return dto;
     }
 }

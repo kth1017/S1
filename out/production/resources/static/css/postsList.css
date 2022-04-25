@@ -50,6 +50,10 @@ nav.paging{
     border: 1px ridge white;
     text-align: center;
 }
+form{
+    position: absolute; left: 55%; padding: 10px;
+    text-align: center;
+}
 nav.paging a{
     color: white;
 }
