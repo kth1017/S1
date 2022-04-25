@@ -69,7 +69,7 @@ public class Pagination {
     }
 
     /*
-    메서드
+    인덱스 메서드
      */
     public static Pagination indexPaginationCreate(int pageSize) {
         Pagination indexPagination = new Pagination(5, 1);
@@ -83,6 +83,7 @@ public class Pagination {
         validationEndPage();
         validationNextBlock();
         validationPreBlock();
+        validationPostsNotExist();
     }
     public void validationEndPage() {
         if (endPage > totalPageCnt) {
@@ -97,6 +98,16 @@ public class Pagination {
     public void validationNextBlock() {
         if (nextBlock > totalPageCnt) {
             nextBlock = totalPageCnt;
+        }
+    }
+    //검색 기능 도입시 게시글이 0일 경우 검증
+    public void validationPostsNotExist() {
+        if (totalListCnt == 0) {
+            setStartPage(1);
+            setEndPage(1);
+            setPrevBlock(1);
+            setNextBlock(1);
+            setTotalPageCnt(1);
         }
     }
 }

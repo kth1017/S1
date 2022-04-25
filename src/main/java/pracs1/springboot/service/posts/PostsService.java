@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pracs1.springboot.domain.posts.Posts;
 import pracs1.springboot.domain.posts.PostsRepository;
+import pracs1.springboot.pagination.Pagination;
 import pracs1.springboot.search.object.PostsSearchVo;
 import pracs1.springboot.search.object.SearchResultDto;
 import pracs1.springboot.web.dto.PostsListResponseDto;
@@ -92,10 +93,17 @@ public class PostsService {
 //                .collect(Collectors.toList());
 //    }
 
-    @Transactional
     public SearchResultDto findSearchListByType(int page, String type, String keyword) {
         PostsSearchVo postsSearchVo = new PostsSearchVo(postsRepository);
         SearchResultDto dto = postsSearchVo.findSearchPostsList(page, type, keyword);
         return dto;
+    }
+
+    public List<PostsListResponseDto> indexPaginationCall() {
+        Pagination indexPagination = Pagination.indexPaginationCreate(5);
+        return postsRepository.findAllDesc().stream()
+                .limit(indexPagination.getPageSize())
+                .map(PostsListResponseDto::new)
+                .collect(Collectors.toList());
     }
 }

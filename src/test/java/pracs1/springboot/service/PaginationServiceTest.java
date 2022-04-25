@@ -9,6 +9,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.transaction.annotation.Transactional;
 import pracs1.springboot.domain.posts.Posts;
 import pracs1.springboot.domain.posts.PostsRepository;
+import pracs1.springboot.service.posts.PostsService;
 import pracs1.springboot.web.dto.PostsListResponseDto;
 
 import java.util.List;
@@ -20,7 +21,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @Transactional
 class PaginationServiceTest {
 
-    @Autowired PaginationService paginationService;
+    @Autowired PostsService postsService;
     @Autowired PostsRepository postsRepository;
 
     @Test
@@ -34,7 +35,7 @@ class PaginationServiceTest {
         }
 
         //when
-        List<PostsListResponseDto> indexList = paginationService.indexPaginationCall();
+        List<PostsListResponseDto> indexList = postsService.indexPaginationCall();
 
         //then
         assertThat(indexList.size()).isEqualTo(5);
