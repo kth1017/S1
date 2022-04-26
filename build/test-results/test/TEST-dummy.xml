@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="dummy" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-04-26T02:39:00" hostname="DESKTOP-U26GOSF" time="0.05">
+<testsuite name="dummy" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-04-26T02:46:33" hostname="DESKTOP-U26GOSF" time="0.047">
   <properties/>
-  <testcase name="더미데이터()" classname="dummy" time="0.05"/>
+  <testcase name="더미데이터()" classname="dummy" time="0.047"/>
   <system-out><![CDATA[insert into POSTS (AUTHOR, CONTENT, TITLE) values (1,1,1);
 insert into POSTS (AUTHOR, CONTENT, TITLE) values (2,2,2);
 insert into POSTS (AUTHOR, CONTENT, TITLE) values (3,3,3);
