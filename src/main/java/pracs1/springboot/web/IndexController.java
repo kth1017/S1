@@ -8,8 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import pracs1.springboot.config.auth.LoginUser;
 import pracs1.springboot.config.auth.dto.SessionUser;
-import pracs1.springboot.pagination.Pagination;
-import pracs1.springboot.search.object.SearchResultDto;
+import pracs1.springboot.search.dto.SearchResultDto;
 import pracs1.springboot.service.posts.PostsSearchService;
 import pracs1.springboot.service.posts.PostsService;
 import pracs1.springboot.web.dto.PostsListResponseDto;
@@ -49,28 +48,28 @@ public class IndexController { // view용 controller
         return "posts-update";
     }
 
-    @GetMapping("/posts-list")
-    public String postsList(Model model, @LoginUser SessionUser user, @RequestParam(defaultValue = "1") int page) {
-
-        if (user != null) {
-            model.addAttribute("userName", user.getName());
-        }
-
-        /*
-        페이징 처리
-         */
-
-        int totalListCnt = postsService.findAllDesc().size();
-        Pagination pagination = new Pagination(totalListCnt, page);
-        int startIndex = pagination.getStartIndex();
-        int pageSize = pagination.getPageSize();
-
-        List<PostsListResponseDto> postsList = postsService.findListpaging(startIndex, pageSize);
-        model.addAttribute("postsList", postsList);
-        model.addAttribute("pagination", pagination);
-
-        return "posts-list";
-    }
+//    @GetMapping("/posts-list")
+//    public String postsList(Model model, @LoginUser SessionUser user, @RequestParam(defaultValue = "1") int page) {
+//
+//        if (user != null) {
+//            model.addAttribute("userName", user.getName());
+//        }
+//
+//        /*
+//        페이징 처리
+//         */
+//
+//        int totalListCnt = postsService.findAllDesc().size();
+//        Pagination pagination = new Pagination(totalListCnt, page);
+//        int startIndex = pagination.getStartIndex();
+//        int pageSize = pagination.getPageSize();
+//
+//        List<PostsListResponseDto> postsList = postsService.findListpaging(startIndex, pageSize);
+//        model.addAttribute("postsList", postsList);
+//        model.addAttribute("pagination", pagination);
+//
+//        return "search-list";
+//    }
 
     @GetMapping("/search")
     public String postsSearchList(Model model, @LoginUser SessionUser user,

@@ -1,9 +1,10 @@
-package pracs1.springboot.search.object;
+package pracs1.springboot.search;
 
 import lombok.*;
 import pracs1.springboot.domain.posts.Posts;
 import pracs1.springboot.domain.posts.PostsRepository;
 import pracs1.springboot.pagination.Pagination;
+import pracs1.springboot.search.dto.SearchResultDto;
 import pracs1.springboot.web.dto.PostsListResponseDto;
 import java.util.Comparator;
 import java.util.List;
@@ -12,7 +13,7 @@ import java.util.stream.Collectors;
 @Getter
 @Setter
 @RequiredArgsConstructor
-public class PostsSearchVo {
+public class PostsSearch {
 
     private final PostsRepository postsRepository;
 

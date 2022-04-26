@@ -37,19 +37,35 @@ class PaginationTest {
     }
 
     @Test
-    public void validationTest(){
+    public void validationCommonTest(){
         //given
         Pagination pagination = new Pagination(10, 1);
 
         //when
         pagination.setEndPage(2);
-        pagination.setPrevBlock(0);
-        pagination.setNextBlock(2);
+        pagination.setPrevBlockPage(0);
+        pagination.setNextBlockPage(2);
         pagination.validationRun();
 
         //then
         assertThat(pagination.getEndPage()).isEqualTo(1);
-        assertThat(pagination.getPrevBlock()).isEqualTo(1);
-        assertThat(pagination.getNextBlock()).isEqualTo(1);
+        assertThat(pagination.getPrevBlockPage()).isEqualTo(1);
+        assertThat(pagination.getNextBlockPage()).isEqualTo(1);
+    }
+
+    @Test
+    public void validationZeroTest(){
+        //given
+        Pagination pagination = new Pagination(0, 1);
+
+        //when
+        pagination.validationRun();
+
+        //then
+        assertThat(pagination.getTotalPageCnt()).isEqualTo(1);
+        assertThat(pagination.getEndPage()).isEqualTo(1);
+        assertThat(pagination.getPrevBlockPage()).isEqualTo(1);
+        assertThat(pagination.getNextBlockPage()).isEqualTo(1);
+
     }
 }

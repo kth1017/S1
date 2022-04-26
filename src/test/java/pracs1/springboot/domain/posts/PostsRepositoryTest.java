@@ -33,16 +33,38 @@ public class PostsRepositoryTest {
         postsRepository.save(Posts.builder()
                 .title(title)
                 .content(content)
-                .author("rnjsxo1017@gmail.com")
+                .author("fadet")
                 .build());
 
         //when
-        List<Posts> postsList = postsRepository.findAll();
+        List<Posts> postsList = postsRepository.findAllDesc();
 
         //then
         Posts posts = postsList.get(0);
         assertThat(posts.getTitle()).isEqualTo(title);
         assertThat(posts.getContent()).isEqualTo(content);
+    }
+
+    @Test
+    public void findByTitleContainingTest() {
+        //given
+        for(int i=1; i<=2; ++i) {
+            postsRepository.save(Posts.builder()
+                    .title("title"+i)
+                    .content("content"+i)
+                    .author("fadet")
+                    .build());
+        }
+
+
+        //when
+        List<Posts> postsList = postsRepository.findByTitleContaining("title1");
+
+        //then
+        Posts posts = postsList.get(0);
+        assertThat(posts.getTitle()).isEqualTo("title1");
+        assertThat(posts.getContent()).isEqualTo("content1");
+
     }
 
     @Test

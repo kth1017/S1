@@ -1,4 +1,4 @@
-package pracs1.springboot.search.object;
+package pracs1.springboot.search.dto;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

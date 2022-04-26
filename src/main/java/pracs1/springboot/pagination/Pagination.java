@@ -28,9 +28,9 @@ public class Pagination {
     /** 10. DB 접근 시작 index **/
     private int startIndex = 0;
     /** 11. 이전 블럭의 마지막 페이지 **/
-    private int prevBlock;
+    private int prevBlockPage;
     /** 12. 다음 블럭의 시작 페이지 **/
-    private int nextBlock;
+    private int nextBlockPage;
 
     public Pagination(int totalListCnt, int page) {
         // 총 게시물 수와 현재 페이지를 Controller로 부터 받아온다.
@@ -57,10 +57,10 @@ public class Pagination {
         setEndPage(startPage + blockSize - 1);
 
         /** 11. 이전 블럭(클릭 시, 이전 블럭 마지막 페이지) **/
-        setPrevBlock((block * blockSize) - blockSize);
+        setPrevBlockPage((block * blockSize) - blockSize);
 
         /** 12. 다음 블럭(클릭 시, 다음 블럭 첫번째 페이지) **/
-        setNextBlock((block * blockSize) + 1);
+        setNextBlockPage((block * blockSize) + 1);
 
         /** 10. DB 접근 시작 index **/
         setStartIndex((page - 1) * pageSize);
@@ -91,23 +91,22 @@ public class Pagination {
         }
     }
     public void validationPreBlock() {
-        if (prevBlock < 1) {
-            this.prevBlock = 1;
+        if (prevBlockPage < 1) {
+            this.prevBlockPage = 1;
         }
     }
     public void validationNextBlock() {
-        if (nextBlock > totalPageCnt) {
-            nextBlock = totalPageCnt;
+        if (nextBlockPage > totalPageCnt) {
+            nextBlockPage = totalPageCnt;
         }
     }
     //검색 기능 도입시 게시글이 0일 경우 검증
     public void validationPostsNotExist() {
         if (totalListCnt == 0) {
-            setStartPage(1);
-            setEndPage(1);
-            setPrevBlock(1);
-            setNextBlock(1);
             setTotalPageCnt(1);
+            setEndPage(1);
+            setNextBlockPage(1);
+
         }
     }
 }

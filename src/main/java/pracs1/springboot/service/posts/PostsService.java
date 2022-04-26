@@ -6,8 +6,8 @@ import org.springframework.transaction.annotation.Transactional;
 import pracs1.springboot.domain.posts.Posts;
 import pracs1.springboot.domain.posts.PostsRepository;
 import pracs1.springboot.pagination.Pagination;
-import pracs1.springboot.search.object.PostsSearchVo;
-import pracs1.springboot.search.object.SearchResultDto;
+import pracs1.springboot.search.PostsSearch;
+import pracs1.springboot.search.dto.SearchResultDto;
 import pracs1.springboot.web.dto.PostsListResponseDto;
 import pracs1.springboot.web.dto.PostsResponseDto;
 import pracs1.springboot.web.dto.PostsSaveRequestDto;
@@ -94,7 +94,7 @@ public class PostsService {
 //    }
 
     public SearchResultDto findSearchListByType(int page, String type, String keyword) {
-        PostsSearchVo postsSearchVo = new PostsSearchVo(postsRepository);
+        PostsSearch postsSearchVo = new PostsSearch(postsRepository);
         SearchResultDto dto = postsSearchVo.findSearchPostsList(page, type, keyword);
         return dto;
     }

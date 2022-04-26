@@ -60,7 +60,7 @@
                 </a>
             </li>
             <li>
-                <a th:href="@{/search/?page={page}&type={type}&keyword={keyword} (page = ${pagination.prevBlock}, type = ${type}, keyword = ${keyword})}" aria-label="Previous">
+                <a th:href="@{/search/?page={page}&type={type}&keyword={keyword} (page = ${pagination.prevBlockPage}, type = ${type}, keyword = ${keyword})}" aria-label="Previous">
                     <span aria-hidden="true">이전</span>
                 </a>
             </li>
@@ -72,7 +72,7 @@
                 </li>
             </th:block>
             <li>
-                <a th:href="@{/search/?page={page}&type={type}&keyword={keyword} (page = ${pagination.nextBlock}, type = ${type}, keyword = ${keyword})}" aria-label="Next">
+                <a th:href="@{/search/?page={page}&type={type}&keyword={keyword} (page = ${pagination.nextBlockPage}, type = ${type}, keyword = ${keyword})}" aria-label="Next">
                     <span aria-hidden="true">다음</span>
                 </a>
             </li>
