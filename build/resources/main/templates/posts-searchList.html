@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html th:replace="~{layout/layoutFile :: layout(~{::head}, ~{::main})}" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>fadet's project Home</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{/css/postsList.css}"/>
+</head>
+<body>
+<header>index header</header>
+<main>
+    <p><br></p>
+    <div style="display: flex">
+        <h2 style="margin-right: 10px">글목록</h2><a href="/posts/save" role="button" class="btn btn-outline-light">글 등록</a>
+        <form action="/search" method="GET">
+            <input type="hidden" name="page" value="1" id="pageNum">
+            <select name="type" id="type">
+                <option class="s" value="title">제목</option>
+                <option class="s" value="content">내용</option>
+                <option class="s" value="titleOrContent">제목+내용</option>
+                <option class="s" value="author">작성자</option>
+            </select>
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <input name="keyword" type="text" placeholder="검색어를 입력해주세요">
+                <button class="btn btn-secondary">검색</button>
+            </div>
+        </form>
+    </div>
+    <p><br></p>
+    <div class="row">
+        <div class="col-sm-8">
+            <table class="table table-hover" style="color: white">
+                <thead>
+                <tr>
+                    <th style="width: 2%;">No</th>
+                    <th style="width: 10%">제목</th>
+                    <th style="width: 10%">내용</th>
+                    <th style="width: 5%;">작성자</th>
+                    <th style="width: 10%;">최종수정일</th>
+                </tr>
+                </thead>
+                <tbody id="tbody">
+                <tr th:each="post : ${postsList}">
+                    <td style="width: 2%;">[[${post.id}]]</td>
+                    <td class="bold" style="width: 10%"><a th:href="@{/posts/update/{postId}(postId=${post.id})}">[[${post.title}]]</a></td>
+                    <td class="bold" style="width: 10%"><a th:href="@{/posts/update/{postId}(postId=${post.id})}">[[${post.content}]]</a></td>
+                    <td style="width: 5%">[[${post.author}]]</td>
+                    <td style="width: 10%">[[${post.modifiedDate}]]</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <nav class="paging" aria-label="Page navigation example ">
+        <ul>
+            <li>
+                <a th:href="@{/search/?page=1&type={type}&keyword={keyword} (type = ${type}, keyword = ${keyword})}" aria-label="Previous">
+                    <span aria-hidden="true">처음</span>
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/search/?page={page}&type={type}&keyword={keyword} (page = ${pagination.prevBlockPage}, type = ${type}, keyword = ${keyword})}" aria-label="Previous">
+                    <span aria-hidden="true">이전</span>
+                </a>
+            </li>
+            <th:block  th:with="start = ${pagination.startPage}, end = ${pagination.endPage}">
+                <li
+                    th:with="start = ${pagination.startPage}, end = ${pagination.endPage}"
+                    th:each="pageButton : ${#numbers.sequence(start, end)}">
+                    <a th:href="@{/search/?page={page}&type={type}&keyword={keyword} (page = ${pageButton}, type = ${type}, keyword = ${keyword})}" th:text=${pageButton}></a>
+                </li>
+            </th:block>
+            <li>
+                <a th:href="@{/search/?page={page}&type={type}&keyword={keyword} (page = ${pagination.nextBlockPage}, type = ${type}, keyword = ${keyword})}" aria-label="Next">
+                    <span aria-hidden="true">다음</span>
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/search/?page={page}&type={type}&keyword={keyword} (page = ${pagination.totalPageCnt}, type = ${type}, keyword = ${keyword})}" aria-label="Previous">
+                    <span aria-hidden="true">끝</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</main>
+<footer>index footer</footer>
+</body>
+</html>

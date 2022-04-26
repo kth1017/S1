@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Roboto+Condensed:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Roboto+Condensed:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100&display=swap');
+/* body part */
+body {
+    background-image: url("/img/bg2.png"); background-repeat: no-repeat; background-size: cover; background-position: center;
+}
+/* header part */
+header{
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex; justify-content: space-between;
+    width: 100%; height: 120px;
+}
+h1{
+    display: inline-block; margin: 2rem;
+    font-family: 'IBM Plex Sans KR', sans-serif; color: white;
+
+}
+nav{
+    display: inline-block; vertical-align: bottom; margin: 2rem;
+    color: white;
+}
+ul {
+    list-style: none;
+    margin: 0;  padding: 0;
+    display: flex;
+}
+li {
+    flex-basis: 50%;
+}
+/* content part */
+main{
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    min-height: 400px;
+}
+h2{
+    color: white;
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    margin-left: 2%;
+}
+div.row{
+    margin-left: 5%;
+    color: white; font-family: 'IBM Plex Sans KR', sans-serif;
+    text-align: center;
+}
+nav.paging{
+    margin-left: 300px; padding: 10px;
+    border: 1px ridge white;
+    text-align: center;
+}
+form{
+    position: absolute; left: 55%; padding: 10px;
+    text-align: center;
+}
+nav.paging a{
+    color: white;
+}
+nav.paging li{
+    width: 40px;
+}
+h1 a:link {
+    color : white;
+}
+h1 a:visited {
+    color : white;
+}
+h1 a:hover {
+    color : white;
+}
+td.bold{
+    font-weight: bold;
+}
+div.col-sm-6 table{
+    table-layout: fixed;
+}
+div.col-sm-6 th{
+    text-align: center;
+}
+div.col-sm-8 td{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 1px;
+}
+table a:link {
+    color : white;
+}
+table a:visited {
+    color : white;
+}
+table a:hover {
+    color : blue;
+}
+/* footer part */
+footer{
+    background-color: rgba(0,0,0,0.3);
+    width: 100%; height: 2500px;
+}
+td.text{
+    color: white;
+    text-indent: 10px;
+}
+td.img{
+    float: right;
+}
+td.text a:link {
+    color : white;
+}
+td.text a:visited {
+    color : white;
+}
+td.text a:hover {
+    color : blue;
+}

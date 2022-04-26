@@ -26,3 +26,7 @@
 5.검색 추가
 #Vo
 - vo 작성시 repository가 주입 안됨
+
+6.중간 배포
+#테스트
+- indexcontrollerTest에서 npe 발생 > url이 단순 /search라 변수가 null로 들어감 > url 수정 후 해결

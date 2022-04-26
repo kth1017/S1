@@ -34,7 +34,7 @@ class IndexControllerTest {
     public void 글목록_로딩() {
 
         //when
-        String body = this.restTemplate.getForObject("/posts-list", String.class); // 왜 this를 씀?
+        String body = this.restTemplate.getForObject("/search?page=1&type=title&keyword=", String.class); // 왜 this를 씀?
 
         //then
         assertThat(body).contains("글목록");
@@ -62,7 +62,7 @@ class IndexControllerTest {
         postsRepository.save(entity);
 
         //when
-        String body = this.restTemplate.getForObject("/posts-list", String.class); // 왜 this를 씀?
+        String body = this.restTemplate.getForObject("/search?page=1&type=title&keyword=", String.class); // 왜 this를 씀?
 
         //then
         assertThat(body).contains("테스트2");

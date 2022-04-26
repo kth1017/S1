@@ -1,14 +1,13 @@
 <!DOCTYPE HTML>
-<html th:fragment="layout (main)" xmlns:th="http://www.thymeleaf.org">
-<head>
+<html th:fragment="layout (head, main)" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="${head}">
     <title>fadet's project Home</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" th:href="@{/css/index.css}"/>
 </head>
 <body>
 <header>
-    <h1 class="title">fadet의 프로젝트 페이지입니다</h1>
+    <h1 class="title"><a href="/">fadet의 프로젝트 페이지입니다</a></h1>
     <nav>
             <span style="font-family: 'Nanum Gothic', sans-serif;" th:if="${userName} != null"><span id="user">[[${userName}]]</span>(으)로 로그인 중입니다
             <a href="/logout" class="btn btn-outline-light" role="button">Logout</a>
@@ -20,7 +19,7 @@
         </ul>
     </nav>
 </header>
-<main>
+<main th:replace="${main}">
     <div>분할 영역</div>
 </main>
 <footer>
