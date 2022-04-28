@@ -5,6 +5,8 @@ JAVA, Spring boot, JPA, thymeleaf, Mustache, AWS EC2 RDS, MariaDB
 
 서비스 주소 : https://bit.ly/3rlvLqF
 
+ver는 배포가 됐었던 커밋만 나열합니다.
+
 
 # 책 부분 : ~ 24시간 배포 스크립트 완성 ver 1.0.0
 @ branch 'main' commit '프로젝트 배포완료'
@@ -38,3 +40,11 @@ ver 1.0.1
 - css 파일 분리
 - 페이징 기능 추가(기능 추가 및 테스트코드 작성)
 - yml 설정으로 DB에 더미데이터 추가
+
+# 검색 기능 추가, 페이징 + 검색 로직 변경 ver 1.0.4
+@ branch 'custom' commit '중간 배포본 포트 수정6'
+
+@to be
+- 검색 기능 추가 및 페이징에 검색 적용
+- 기존 로직을 도메인 모델에 가까운 로직으로 수정(컨트롤러, 서비스에선 최대한 객체의 메서드 순서만 보장하도록)
+- 추가된 기능에 맞춰 html, js의 url 전부 수정
