@@ -1,10 +1,10 @@
-package pracs1.springboot.search;
+package pracs1.springboot.posts.search;
 
 import lombok.*;
 import pracs1.springboot.domain.posts.Posts;
 import pracs1.springboot.domain.posts.PostsRepository;
-import pracs1.springboot.pagination.Pagination;
-import pracs1.springboot.search.dto.SearchResultDto;
+import pracs1.springboot.posts.pagination.Pagination;
+import pracs1.springboot.posts.search.dto.SearchResultDto;
 import pracs1.springboot.web.dto.PostsListResponseDto;
 import java.util.Comparator;
 import java.util.List;
@@ -70,6 +70,7 @@ public class PostsSearch {
 
         return searchResultDto;
     }
+
     // 분할 전
 //    public SearchResultDto findSearchPostsList(int page, String type, String keyword) {
 //        this.page = page;

@@ -1,27 +1,26 @@
 package pracs1.springboot.web;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
+import pracs1.springboot.PostsValidationDto;
 import pracs1.springboot.config.auth.LoginUser;
 import pracs1.springboot.config.auth.dto.SessionUser;
-import pracs1.springboot.search.dto.SearchResultDto;
-import pracs1.springboot.service.posts.PostsSearchService;
+import pracs1.springboot.posts.search.dto.SearchResultDto;
 import pracs1.springboot.service.posts.PostsService;
 import pracs1.springboot.web.dto.PostsListResponseDto;
 import pracs1.springboot.web.dto.PostsResponseDto;
 
 import java.util.List;
 
+@Slf4j
 @RequiredArgsConstructor
 @Controller
 public class IndexController { // view용 controller
 
     private final PostsService postsService;
-    private final PostsSearchService postsSearchService;
 
     @GetMapping("/")
     public String index(Model model, @LoginUser SessionUser user) {
@@ -37,7 +36,13 @@ public class IndexController { // view용 controller
     }
 
     @GetMapping("/posts/save")
-    public String postsSave() {
+    public String postsSave(Model model) {
+        model.addAttribute("posts", new PostsValidationDto());
+        return "posts-save";
+    }
+
+    @PostMapping("/posts/save")
+    public String postsSaveForm() {
         return "posts-save";
     }
 
@@ -82,6 +87,7 @@ public class IndexController { // view용 controller
 
         model.addAttribute("postsList", searchPostsResult.getSearchPostsListPaging());
         model.addAttribute("pagination", searchPostsResult.getPagination());
+
         model.addAttribute("type", searchPostsResult.getType());
         model.addAttribute("keyword", searchPostsResult.getKeyword());
 

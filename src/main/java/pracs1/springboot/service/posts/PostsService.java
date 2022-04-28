@@ -5,9 +5,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pracs1.springboot.domain.posts.Posts;
 import pracs1.springboot.domain.posts.PostsRepository;
-import pracs1.springboot.pagination.Pagination;
-import pracs1.springboot.search.PostsSearch;
-import pracs1.springboot.search.dto.SearchResultDto;
+import pracs1.springboot.posts.pagination.Pagination;
+import pracs1.springboot.posts.search.PostsSearch;
+import pracs1.springboot.posts.search.dto.SearchResultDto;
 import pracs1.springboot.web.dto.PostsListResponseDto;
 import pracs1.springboot.web.dto.PostsResponseDto;
 import pracs1.springboot.web.dto.PostsSaveRequestDto;
@@ -58,6 +58,19 @@ public class PostsService {
 
     }
 
+    // 인덱스 최대 글 제한
+    public List<PostsListResponseDto> indexPaginationCall() {
+        Pagination indexPagination = Pagination.indexPaginationCreate(5);
+        return postsRepository.findAllDesc().stream()
+                .limit(indexPagination.getPageSize())
+                .map(PostsListResponseDto::new)
+                .collect(Collectors.toList());
+    }
+
+    /*
+    검색 기능 서비스
+     */
+
     @Transactional
     public List<PostsListResponseDto> findListpaging(int startindex, int pagesize) {
         return postsRepository.findAllDesc().stream()
@@ -68,12 +81,12 @@ public class PostsService {
 
     }
 
-    @Transactional
-    public List<PostsListResponseDto> findAllByTitleSearch(String keyword) {
-        return postsRepository.findByTitleContaining(keyword).stream()
-                .map(PostsListResponseDto::new)
-                .collect(Collectors.toList());
-    }
+//    @Transactional
+//    public List<PostsListResponseDto> findAllByTitleSearch(String keyword) {
+//        return postsRepository.findByTitleContaining(keyword).stream()
+//                .map(PostsListResponseDto::new)
+//                .collect(Collectors.toList());
+//    }
 
 //    @Transactional
 //    public Pagination findPagination(String keyword, int page) {
@@ -94,16 +107,10 @@ public class PostsService {
 //    }
 
     public SearchResultDto findSearchListByType(int page, String type, String keyword) {
-        PostsSearch postsSearchVo = new PostsSearch(postsRepository);
-        SearchResultDto dto = postsSearchVo.findSearchPostsList(page, type, keyword);
+        PostsSearch postsSearch = new PostsSearch(postsRepository);
+        SearchResultDto dto = postsSearch.findSearchPostsList(page, type, keyword);
         return dto;
     }
 
-    public List<PostsListResponseDto> indexPaginationCall() {
-        Pagination indexPagination = Pagination.indexPaginationCreate(5);
-        return postsRepository.findAllDesc().stream()
-                .limit(indexPagination.getPageSize())
-                .map(PostsListResponseDto::new)
-                .collect(Collectors.toList());
-    }
+
 }

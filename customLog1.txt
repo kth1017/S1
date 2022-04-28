@@ -30,3 +30,13 @@
 6.중간 배포
 #테스트
 - indexcontrollerTest에서 npe 발생 > url이 단순 /search라 변수가 null로 들어감 > url 수정 후 해결
+- 테스트 설정 h2 dependency, yml 추가
+! PostsApiControllerTest 오류 (local에선 정상, 배포 시에만 에러)
+
+7. 검증
+# @ExceptionHandler, @ControllerAdvice를 사용한 @RequestBody Bean vallidation
+! JSON을 파싱해서 View로 오류 정보를 넘겨 UI 개선 가능 예측(단, 현재는 필요없음)
+
+8. OAuth
+#개선
+! ResponseEntity를 반환할때 403 권한 오류, 시큐리티 사용시 ControllerAdvice로 예외처리가 안되서 다른 방법을 찾아야함
