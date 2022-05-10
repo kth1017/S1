@@ -24,25 +24,25 @@ public class Link {
     @Column(length = 100, nullable = false)
     private String description;
 
-    @Column(columnDefinition = "TEXT", nullable = false)
-    private String blogLink;
+    @Column(columnDefinition = "TEXT")
+    private String postNum;
 
-    @Column(columnDefinition = "TEXT", nullable = false)
-    private String githubLink;
+    @Column(columnDefinition = "TEXT")
+    private String githubRepo;
 
-    public Link(String title, String stackCategory, String description, String blogLink, String githubLink) {
+    public Link(String title, String stackCategory, String description, String postNum, String githubRepo) {
         this.title = title;
         this.stackCategory = stackCategory;
         this.description = description;
-        this.blogLink = blogLink;
-        this.githubLink = githubLink;
+        this.postNum = postNum;
+        this.githubRepo = githubRepo;
     }
 
-    public void update(String title, String stackCategory, String description, String blogLink, String githubLink) {
+    public void update(String title, String stackCategory, String description, String postNum, String githubRepo) {
         this.title = title;
         this.stackCategory = stackCategory;
         this.description = description;
-        this.blogLink = blogLink;
-        this.githubLink = githubLink;
+        this.postNum = postNum;
+        this.githubRepo = githubRepo;
     }
 }

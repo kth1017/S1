@@ -18,8 +18,8 @@ var main = {
             title: $('#title').val(),
             stackCategory: $('#stackCategory').val(),
             description: $('#description').val(),
-            blogLink: $('#blogLink').val(),
-            githubLink: $('#githubLink').val()
+            postNum: $('#postNum').val(),
+            githubRepo: $('#githubRepo').val()
         };
 
         $.ajax({
@@ -40,8 +40,8 @@ var main = {
             title: $('#title').val(),
             stackCategory: $('#stackCategory').val(),
             description: $('#description').val(),
-            blogLink: $('#blogLink').val(),
-            githubLink: $('#githubLink').val()
+            postNum: $('#postNum').val(),
+            githubRepo: $('#githubRepo').val()
         };
 
         var id = $('#id').val();
@@ -64,7 +64,7 @@ var main = {
 
         $.ajax({
             type: 'DELETE',
-            url: '/link/'+id,
+            url: '/api/link/'+id,
             dataType: 'json',
             contentType:'application/json; charset=utf-8'
         }).done(function() {

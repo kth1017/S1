@@ -21,18 +21,18 @@
                         <tr>
                             <th style="width: 3%;">제목</th>
                             <th style="width: 10%">스택종류</th>
-                            <th style="width: 5%;">설명</th>
-                            <th style="width: 10%;">블로그링크</th>
-                            <th style="width: 10%;">깃헙링크</th>
+                            <th style="width: 10%;">설명</th>
+                            <th style="width: 3%;">blog</th>
+                            <th style="width: 3%;">github</th>
                         </tr>
                         </thead>
                         <tbody id="tbody">
                         <tr th:each="link : ${link}">
-                            <td style="width: 3%;">[[${link.title}]]</td>
+                            <td style="width: 3%;"><a th:href="@{/link/update/{linkId}(linkId=${link.id})}">[[${link.title}]]</td>
                             <td class="bold" style="width: 10%">[[${link.stackCategory}]]</a></td>
-                            <td style="width: 5%">[[${link.description}]]</td>
-                            <td style="width: 10%">[[${link.blogLink}]]</td>
-                            <td style="width: 10%">[[${link.githubLink}]]</td>
+                            <td style="width: 10%"><a th:href="@{/link/update/{linkId}(linkId=${link.id})}">[[${link.description}]]</td>
+                            <td style="width: 3%"><a th:href="@{https://fadet-coding.tistory.com/{postNum}(postNum=${link.postNum})}">링크</td>
+                            <td style="width: 3%"><a th:href="@{https://github.com/kth1017/{githubRepo}(githubRepo=${link.githubRepo})}">링크</td>
                         </tr>
                         </tbody>
                     </table>

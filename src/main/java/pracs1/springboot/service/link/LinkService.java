@@ -5,19 +5,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pracs1.springboot.domain.link.Link;
 import pracs1.springboot.domain.link.LinkRepository;
-import pracs1.springboot.domain.posts.Posts;
-import pracs1.springboot.domain.posts.PostsRepository;
 import pracs1.springboot.posts.pagination.Pagination;
-import pracs1.springboot.posts.search.PostsSearch;
-import pracs1.springboot.posts.search.dto.SearchResultDto;
 import pracs1.springboot.web.LinkDto.LinkListResponseDto;
 import pracs1.springboot.web.LinkDto.LinkResponseDto;
 import pracs1.springboot.web.LinkDto.LinkSaveRequestDto;
 import pracs1.springboot.web.LinkDto.LinkUpdateRequestDto;
-import pracs1.springboot.web.dto.PostsListResponseDto;
-import pracs1.springboot.web.dto.PostsResponseDto;
-import pracs1.springboot.web.dto.PostsSaveRequestDto;
-import pracs1.springboot.web.dto.PostsUpdateRequestDto;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -38,7 +30,7 @@ public class LinkService {
         Link link = linkRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("해당 링크가 없습니다. id=" + id));
 
-        link.update(requestDto.getTitle(), requestDto.getStackCategory(), requestDto.getDescription(), requestDto.getBlogLink(), requestDto.getGithubLink());
+        link.update(requestDto.getTitle(), requestDto.getStackCategory(), requestDto.getDescription(), requestDto.getPostNum(), requestDto.getGithubRepo());
 
         return id;
     }

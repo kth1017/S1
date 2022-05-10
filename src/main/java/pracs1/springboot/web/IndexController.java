@@ -96,22 +96,4 @@ public class IndexController { // view용 controller
 
         return "posts-searchList";
     }
-
-    @GetMapping("/link")
-    public String LinkList(Model model, @LoginUser SessionUser user,
-                                  @RequestParam(defaultValue = "1") int page, String keyword, String type) {
-        if (user != null) {
-            model.addAttribute("userName", user.getName());
-        }
-
-        List<LinkListResponseDto> responseDto = linkService.findAllDesc();
-
-        model.addAttribute("link", responseDto);
-        return "link";
-    }
-
-    @GetMapping("/link/save")
-    public String linkSaveForm() {
-        return "link-save";
-    }
 }

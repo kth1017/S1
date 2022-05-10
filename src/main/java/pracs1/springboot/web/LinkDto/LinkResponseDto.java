@@ -2,7 +2,6 @@ package pracs1.springboot.web.LinkDto;
 
 import lombok.Getter;
 import pracs1.springboot.domain.link.Link;
-import pracs1.springboot.domain.posts.Posts;
 
 @Getter
 public class LinkResponseDto {
@@ -12,15 +11,15 @@ public class LinkResponseDto {
 
     private String stackCategory;
     private String description;
-    private String blogLink;
-    private String githubLink;
+    private String postNum;
+    private String githubRepo;
 
     public LinkResponseDto(Link entity) {
         this.id = entity.getId();
         this.title = entity.getTitle();
         this.stackCategory = entity.getStackCategory();
         this.description = entity.getDescription();
-        this.blogLink = entity.getBlogLink();
-        this.githubLink = entity.getGithubLink();
+        this.postNum = entity.getPostNum();
+        this.githubRepo = entity.getGithubRepo();
     }
 }
