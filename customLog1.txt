@@ -40,3 +40,10 @@
 8. OAuth
 #개선
 ! ResponseEntity를 반환할때 403 권한 오류, 시큐리티 사용시 ControllerAdvice로 예외처리가 안되서 다른 방법을 찾아야함
+
+9. 학습 진척 링크
+#문제
+! InvalidDefinitionException: (no Creators, like default constructor, exist): cannot deserialize from Object value (no delegate- or property-based Creator)
+말 그대로 메세지 컨버터가 json을 객체로 만들어줘야하는데 jakson library는 빈 생성자를 만드는 법을 모르기때문에 객체에 빈 생성자 추가해서 해결
+! No default constructor for entity : entity는 기본 생성자를 만들어줘야하는 제약이 존재함
+@NoArgs를 이용하되 devtools 사용해서 리컴파일하면 적용 안됨

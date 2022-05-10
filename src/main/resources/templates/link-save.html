@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>스프링부트 웹서비스</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+<div class="col-md-12">
+    <div class="col-md-4">
+        <form action="link-save.html" th:action th:object="${link}" method="post">
+            <div class="form-group">
+                <label for="title">제목</label>
+                <input type="text" class="form-control" id="title" placeholder="제목을 입력하세요">
+            </div>
+            <div class="form-group">
+                <label for="stackCategory"> 스택 종류 </label>
+                <input type="text" class="form-control" id="stackCategory" placeholder="종류를 입력하세요">
+            </div>
+            <div class="form-group">
+                <label for="description"> 설명 </label>
+                <textarea class="form-control" id="description" placeholder="설명을 입력하세요"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="blogLink"> 블로그링크 </label>
+                <textarea class="form-control" id="blogLink" placeholder="블로그링크를 입력하세요"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="githubLink"> 깃헙링크 </label>
+                <textarea class="form-control" id="githubLink" placeholder="깃헙링크를 입력하세요"></textarea>
+            </div>
+        </form>
+        <a href="/" role="button" class="btn btn-secondary">취소</a>
+        <button type="button" class="btn btn-primary" id="btn-save">등록</button>
+    </div>
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<!--index.js 추가-->
+<script src="/js/app/link.js"></script>
+</html>

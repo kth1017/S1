@@ -9,7 +9,9 @@ import pracs1.springboot.PostsValidationDto;
 import pracs1.springboot.config.auth.LoginUser;
 import pracs1.springboot.config.auth.dto.SessionUser;
 import pracs1.springboot.posts.search.dto.SearchResultDto;
+import pracs1.springboot.service.link.LinkService;
 import pracs1.springboot.service.posts.PostsService;
+import pracs1.springboot.web.LinkDto.LinkListResponseDto;
 import pracs1.springboot.web.dto.PostsListResponseDto;
 import pracs1.springboot.web.dto.PostsResponseDto;
 
@@ -21,6 +23,7 @@ import java.util.List;
 public class IndexController { // view용 controller
 
     private final PostsService postsService;
+    private final LinkService linkService;
 
     @GetMapping("/")
     public String index(Model model, @LoginUser SessionUser user) {
@@ -92,5 +95,23 @@ public class IndexController { // view용 controller
         model.addAttribute("keyword", searchPostsResult.getKeyword());
 
         return "posts-searchList";
+    }
+
+    @GetMapping("/link")
+    public String LinkList(Model model, @LoginUser SessionUser user,
+                                  @RequestParam(defaultValue = "1") int page, String keyword, String type) {
+        if (user != null) {
+            model.addAttribute("userName", user.getName());
+        }
+
+        List<LinkListResponseDto> responseDto = linkService.findAllDesc();
+
+        model.addAttribute("link", responseDto);
+        return "link";
+    }
+
+    @GetMapping("/link/save")
+    public String linkSaveForm() {
+        return "link-save";
     }
 }

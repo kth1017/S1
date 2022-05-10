@@ -2,7 +2,9 @@ package pracs1.springboot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
+
+import javax.servlet.http.HttpServlet;
+
 
 // @EnableJpaAuditing 삭제
 @SpringBootApplication

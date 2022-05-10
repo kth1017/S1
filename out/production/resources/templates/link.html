@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html th:replace="~{layout/linkLayoutFile :: layout(~{::head}, ~{::main})}" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>fadet's project Home</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{/css/index.css}"/>
+</head>
+<body>
+    <header>index header</header>
+    <main>
+        <p><br></p>
+        <div style="display: flex">
+            <h2 style="margin-right: 10px">링크</h2><a href="/link/save" role="button" class="btn btn-outline-light">링크 등록</a>
+        </div>
+            <p><br></p>
+            <div class="row">
+                <div class="col-sm-6">
+                    <table class="table table-hover" style="color: white">
+                        <thead>
+                        <tr>
+                            <th style="width: 3%;">제목</th>
+                            <th style="width: 10%">스택종류</th>
+                            <th style="width: 5%;">설명</th>
+                            <th style="width: 10%;">블로그링크</th>
+                            <th style="width: 10%;">깃헙링크</th>
+                        </tr>
+                        </thead>
+                        <tbody id="tbody">
+                        <tr th:each="link : ${link}">
+                            <td style="width: 3%;">[[${link.title}]]</td>
+                            <td class="bold" style="width: 10%">[[${link.stackCategory}]]</a></td>
+                            <td style="width: 5%">[[${link.description}]]</td>
+                            <td style="width: 10%">[[${link.blogLink}]]</td>
+                            <td style="width: 10%">[[${link.githubLink}]]</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+    </main>
+    <footer>index footer</footer>
+</body>
+</html>
