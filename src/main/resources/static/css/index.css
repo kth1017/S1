@@ -38,7 +38,7 @@ main1{
 }
 main2{
     background-color: rgba(0,0,0,0.3) ;
-    width: 100% !important; min-height: 400px ;
+    width: 100% ; min-height: 400px ;
     display: block;
 }
 h2{
