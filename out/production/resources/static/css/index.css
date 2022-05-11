@@ -62,19 +62,13 @@ h1 a:hover {
 td.bold{
     font-weight: bold;
 }
-div.col-sm-6 table{
-    table-layout: fixed;
-}
-div.col-sm-6 th{
-    text-align: center;
-}
-div.col-sm-6 td{
+div.col-sm-9 td{
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
     max-width: 1px;
 }
-table a:link {
+a:link {
     color : white;
 }
 table a:visited {

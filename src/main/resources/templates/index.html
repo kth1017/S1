@@ -15,7 +15,7 @@
         </div>
         <p><br></p>
         <div class="row">
-            <div class="col-sm-8">
+            <div class="col-sm-9">
                 <table class="table table-hover" style="color: white">
                     <thead>
                     <tr>
@@ -26,7 +26,7 @@
                         <th style="width: 1%;">github</th>
                     </tr>
                     </thead>
-                    <tbody id="tbody">
+                    <tbody>
                     <tr th:each="link : ${link}">
                         <td class="bold" style="width: 3%;"><a th:href="@{/link/update/{linkId}(linkId=${link.id})}">[[${link.title}]]</td>
                         <td class="bold" style="width: 3%">[[${link.stackCategory}]]</a></td>
@@ -40,7 +40,6 @@
         </div>
         <p><br></p>
     </main1>
-        <p><br></p>
     <main2>
         <p><br></p>
         <div style="display: flex">
