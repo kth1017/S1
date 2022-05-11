@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html th:fragment="layout (head, main)" xmlns:th="http://www.thymeleaf.org">
+<html th:fragment="layout (head, main1, main2)" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="${head}">
     <title>fadet's project Home</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -19,10 +19,14 @@
         </ul>
     </nav>
 </header>
-<main th:replace="${main}">
-    <div>분할 영역</div>
-</main>
+<main1 th:replace="${main1}">
+    <div>분할 영역1</div>
+</main1>
+<main2 th:replace="${main2}">
+    <div>분할 영역1</div>
+</main2>
 <footer>
+    <p><br></p>
     <h2>링크</h2>
     <table style="margin-left: 3%">
         <tr>

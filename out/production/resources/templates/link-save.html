@@ -11,6 +11,10 @@
     <div class="col-md-4">
         <form action="link-save.html" th:action th:object="${link}" method="post">
             <div class="form-group">
+                <label for="importance">중요도</label>
+                <input type="number" class="form-control" id="importance" placeholder="중요도를 입력하세요">
+            </div>
+            <div class="form-group">
                 <label for="title">제목</label>
                 <input type="text" class="form-control" id="title" placeholder="제목을 입력하세요">
             </div>

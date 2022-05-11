@@ -1,4 +1,4 @@
-package pracs1.springboot.web;
+package pracs1.springboot.web.as_is;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;

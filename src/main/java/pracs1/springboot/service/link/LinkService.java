@@ -5,7 +5,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pracs1.springboot.domain.link.Link;
 import pracs1.springboot.domain.link.LinkRepository;
-import pracs1.springboot.posts.pagination.Pagination;
+import pracs1.springboot.search.pagination.Pagination;
+import pracs1.springboot.search.search.LinkSearch;
+import pracs1.springboot.search.search.PostsDto.SearchLinkResultDto;
+import pracs1.springboot.search.search.PostsSearch;
+import pracs1.springboot.search.search.PostsDto.SearchPostResultDto;
 import pracs1.springboot.web.LinkDto.LinkListResponseDto;
 import pracs1.springboot.web.LinkDto.LinkResponseDto;
 import pracs1.springboot.web.LinkDto.LinkSaveRequestDto;
@@ -30,7 +34,8 @@ public class LinkService {
         Link link = linkRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("해당 링크가 없습니다. id=" + id));
 
-        link.update(requestDto.getTitle(), requestDto.getStackCategory(), requestDto.getDescription(), requestDto.getPostNum(), requestDto.getGithubRepo());
+        link.update(requestDto.getTitle(), requestDto.getStackCategory(), requestDto.getDescription(),
+                requestDto.getPostNum(), requestDto.getGithubRepo(), requestDto.getImportance());
 
         return id;
     }
@@ -57,9 +62,10 @@ public class LinkService {
     }
 
     // 인덱스 최대 글 제한
-    public List<LinkListResponseDto> indexPaginationCall() {
+    public List<LinkListResponseDto> indexLinkPaginationCallFilter4() {
         Pagination indexPagination = Pagination.indexPaginationCreate(5);
         return linkRepository.findAllDesc().stream()
+                .filter(i -> i.getImportance() == 4)
                 .limit(indexPagination.getPageSize())
                 .map(LinkListResponseDto::new)
                 .collect(Collectors.toList());
@@ -79,34 +85,9 @@ public class LinkService {
 
     }
 
-//    @Transactional
-//    public List<PostsListResponseDto> findAllByTitleSearch(String keyword) {
-//        return postsRepository.findByTitleContaining(keyword).stream()
-//                .map(PostsListResponseDto::new)
-//                .collect(Collectors.toList());
-//    }
-
-//    @Transactional
-//    public Pagination findPagination(String keyword, int page) {
-//        int totalListCnt = postsRepository.findByTitleContaining(keyword).size();
-//        PostsSearchVo dto = new PostsSearchVo(totalListCnt, page);
-//        return dto.SearchCalcul();
-//    }
-//
-//    @Transactional
-//    public List<PostsListResponseDto> findByPagination(Pagination pagination, String keyword) {
-//        int startindex = pagination.getStartIndex();
-//        int pageSize = pagination.getPageSize();
-//        return postsRepository.findByTitleContaining(keyword).stream()
-//                .skip(startindex)
-//                .limit(pageSize)
-//                .map(PostsListResponseDto::new)
-//                .collect(Collectors.toList());
-//    }
-
-//    public SearchResultDto findSearchListByType(int page, String type, String keyword) {
-//        PostsSearch postsSearch = new PostsSearch(linkRepository);
-//        SearchResultDto dto = postsSearch.findSearchPostsList(page, type, keyword);
-//        return dto;
-//    }
+    public SearchLinkResultDto findSearchLinkByType(int page, String type, String keyword) {
+        LinkSearch linkSearch = new LinkSearch(linkRepository);
+        SearchLinkResultDto dto = linkSearch.findSearchPostsList(page, type, keyword);
+        return dto;
+    }
 }

@@ -1,7 +1,7 @@
 package pracs1.springboot.pagination;
 
 import org.junit.jupiter.api.Test;
-import pracs1.springboot.posts.pagination.Pagination;
+import pracs1.springboot.search.pagination.Pagination;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

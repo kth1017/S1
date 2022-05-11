@@ -11,13 +11,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import pracs1.springboot.PostsValidationDto;
 import pracs1.springboot.config.auth.LoginUser;
 import pracs1.springboot.config.auth.dto.SessionUser;
-import pracs1.springboot.posts.search.dto.SearchResultDto;
+import pracs1.springboot.search.search.PostsDto.SearchLinkResultDto;
+import pracs1.springboot.search.search.PostsDto.SearchPostResultDto;
 import pracs1.springboot.service.link.LinkService;
-import pracs1.springboot.service.posts.PostsService;
 import pracs1.springboot.web.LinkDto.LinkListResponseDto;
 import pracs1.springboot.web.LinkDto.LinkResponseDto;
-import pracs1.springboot.web.dto.PostsListResponseDto;
-import pracs1.springboot.web.dto.PostsResponseDto;
 
 import java.util.List;
 
@@ -36,8 +34,14 @@ public class LinkController { // view용 controller
         }
 
         List<LinkListResponseDto> responseDto = linkService.findAllDesc();
+        SearchLinkResultDto searchLinkResult = linkService.findSearchLinkByType(page, type, keyword);
 
-        model.addAttribute("link", responseDto);
+        model.addAttribute("link", searchLinkResult.getSearchLinkListPaging());
+        model.addAttribute("pagination", searchLinkResult.getPagination());
+
+        model.addAttribute("type", searchLinkResult.getType());
+        model.addAttribute("keyword", searchLinkResult.getKeyword());
+
         return "link";
     }
 

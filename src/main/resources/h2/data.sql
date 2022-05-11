@@ -149,3 +149,10 @@ insert into POSTS (AUTHOR, CONTENT, TITLE) values (148,148,148);
 insert into POSTS (AUTHOR, CONTENT, TITLE) values (149,149,149);
 insert into POSTS (AUTHOR, CONTENT, TITLE) values (150,150,150);
 insert into POSTS (AUTHOR, CONTENT, TITLE) values (151,151,151);
+insert into LINK (TITLE, IMPORTANCE, STACK_CATEGORY, DESCRIPTION) values ('spring boot 학습',4,'spring boot','spring boot 기초 spring boot 심화');
+insert into LINK (TITLE, IMPORTANCE, STACK_CATEGORY, DESCRIPTION) values ('thymeleaf 학습',3,'thymeleaf','thymeleaf 기초 thymeleaf 심화');
+insert into LINK (TITLE, IMPORTANCE, STACK_CATEGORY, DESCRIPTION) values ('mvc 학습',4,'spring mvc','spring mvc 기초 spring mvc 심화');
+insert into LINK (TITLE, IMPORTANCE, STACK_CATEGORY, DESCRIPTION) values ('mongoDB 학습',4,'mongoDB','mongoDB 기초 mongoDB 심화');
+insert into LINK (TITLE, IMPORTANCE, STACK_CATEGORY, DESCRIPTION) values ('sql 학습',3,'sql','sql 기초 sql 심화');
+
+

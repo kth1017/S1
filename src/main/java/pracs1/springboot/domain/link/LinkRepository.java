@@ -12,5 +12,9 @@ public interface LinkRepository extends JpaRepository<Link, Long> {
     List<Link> findAllDesc();
 
     List<Link> findByTitleContaining(String keyword);
+    List<Link> findByStackCategoryContaining(String keyword);
+    List<Link> findByDescriptionContaining(String keyword);
+
+
 
 }

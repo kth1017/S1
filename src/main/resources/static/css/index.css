@@ -4,11 +4,11 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100&display=swap');
 /* body part */
 body {
-    background-image: url("/img/bg2.png"); background-repeat: no-repeat; background-size: cover; background-position: center;
+    background-image: url("/img/bg2.png") ; background-repeat: no-repeat; background-size: cover; background-position: center;
 }
 /* header part */
 header{
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5) ;
     display: flex; justify-content: space-between; width: 100%; height: 120px;
 }
 h1{
@@ -27,8 +27,19 @@ li {
 }
 /* content part */
 main{
-    background-color: rgba(0, 0, 0, 0.3);
-    width: 100%; min-height: 400px;
+    background-color: rgba(0,0,0,0.3) ;
+    width: 100% ; min-height: 400px ;
+    display: block;
+}
+main1{
+    background-color: rgba(0,0,0,0.3) ;
+    width: 100% ; min-height: 400px ;
+    display: block;
+}
+main2{
+    background-color: rgba(0,0,0,0.3) ;
+    width: 100% !important; min-height: 400px ;
+    display: block;
 }
 h2{
     color: white; font-family: 'IBM Plex Sans KR', sans-serif;

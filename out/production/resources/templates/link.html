@@ -4,35 +4,48 @@
     <title>fadet's project Home</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" th:href="@{/css/index.css}"/>
+    <link rel="stylesheet" th:href="@{/css/postsList.css}"/>
 </head>
 <body>
     <header>index header</header>
     <main>
         <p><br></p>
         <div style="display: flex">
-            <h2 style="margin-right: 10px">링크</h2><a href="/link/save" role="button" class="btn btn-outline-light">링크 등록</a>
+            <h2 style="margin-right: 10px">주요 학습 사항</h2><a href="/link/save" role="button" class="btn btn-outline-light">링크 등록(admin)</a>
+            <form action="/link" method="GET">
+                <input type="hidden" name="page" value="1" id="pageNum">
+                <select name="type" id="type">
+                    <option class="s" value="title">제목</option>
+                    <option class="s" value="stackCategory">스택 종류</option>
+                    <option class="s" value="description">설명</option>
+                    <option class="s" value="all">전체</option>
+                </select>
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <input name="keyword" type="text" placeholder="검색어를 입력해주세요">
+                    <button class="btn btn-secondary">검색</button>
+                </div>
+            </form>
         </div>
             <p><br></p>
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-8">
                     <table class="table table-hover" style="color: white">
                         <thead>
                         <tr>
                             <th style="width: 3%;">제목</th>
-                            <th style="width: 10%">스택종류</th>
-                            <th style="width: 10%;">설명</th>
-                            <th style="width: 3%;">blog</th>
-                            <th style="width: 3%;">github</th>
+                            <th style="width: 3%">스택종류</th>
+                            <th style="width: 13%;">설명</th>
+                            <th style="width: 1%;">blog</th>
+                            <th style="width: 1%;">github</th>
                         </tr>
                         </thead>
                         <tbody id="tbody">
                         <tr th:each="link : ${link}">
-                            <td style="width: 3%;"><a th:href="@{/link/update/{linkId}(linkId=${link.id})}">[[${link.title}]]</td>
-                            <td class="bold" style="width: 10%">[[${link.stackCategory}]]</a></td>
-                            <td style="width: 10%"><a th:href="@{/link/update/{linkId}(linkId=${link.id})}">[[${link.description}]]</td>
-                            <td style="width: 3%"><a th:href="@{https://fadet-coding.tistory.com/{postNum}(postNum=${link.postNum})}">링크</td>
-                            <td style="width: 3%"><a th:href="@{https://github.com/kth1017/{githubRepo}(githubRepo=${link.githubRepo})}">링크</td>
+                            <td class="bold" style="width: 3%;"><a th:href="@{/link/update/{linkId}(linkId=${link.id})}">[[${link.title}]]</td>
+                            <td class="bold" style="width: 3%">[[${link.stackCategory}]]</a></td>
+                            <td class="bold" style="width: 13%"><a th:href="@{/link/update/{linkId}(linkId=${link.id})}">[[${link.description}]]</td>
+                            <td style="width: 1%"><a th:if="${not #strings.isEmpty(link.postNum)}" th:href="@{https://fadet-coding.tistory.com/{postNum}(postNum=${link.postNum})}">링크</td>
+                            <td style="width: 1%"><a th:if="${not #strings.isEmpty(link.githubRepo)}" th:href="@{https://github.com/kth1017/{githubRepo}(githubRepo=${link.githubRepo})}">링크</td>
                         </tr>
                         </tbody>
                     </table>

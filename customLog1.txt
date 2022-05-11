@@ -42,9 +42,14 @@
 ! ResponseEntity를 반환할때 403 권한 오류, 시큐리티 사용시 ControllerAdvice로 예외처리가 안되서 다른 방법을 찾아야함
 
 9. 학습 진척 링크
+#추가 사항
+- index content를 두 구획으로 나눔
+- 링크 페이지 신설시 기존 코드 작성 로직에 따라 편하게 추가함
 #문제
 ! InvalidDefinitionException: (no Creators, like default constructor, exist): cannot deserialize from Object value (no delegate- or property-based Creator)
 말 그대로 메세지 컨버터가 json을 객체로 만들어줘야하는데 jakson library는 빈 생성자를 만드는 법을 모르기때문에 객체에 빈 생성자 추가해서 해결
 ! No default constructor for entity : entity는 기본 생성자를 만들어줘야하는 제약이 존재함
 @NoArgs를 이용하되 devtools 사용해서 리컴파일하면 적용 안됨
 ! post를 link로 옮기다보니 템플릿에 게시글 번호를 없앴는데 그것때문에 Null > long 예외 발생
+! js에서 $대신 & 사용시 아예 먹통
+! 배경색 css가 적용안되서 개발자도구 키고 비교했더니 block 여부가 차이나서 해결

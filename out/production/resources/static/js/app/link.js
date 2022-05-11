@@ -19,7 +19,8 @@ var main = {
             stackCategory: $('#stackCategory').val(),
             description: $('#description').val(),
             postNum: $('#postNum').val(),
-            githubRepo: $('#githubRepo').val()
+            githubRepo: $('#githubRepo').val(),
+            importance: $('#importance').val()
         };
 
         $.ajax({
@@ -30,7 +31,7 @@ var main = {
             data: JSON.stringify(data)
         }).done(function() {
             alert('링크가 등록되었습니다.');
-            window.location.href = '/link';
+            window.location.href = '/link?page=1&type=title&keyword=';
         }).fail(function (error) {
             alert(JSON.stringify(error));
         });
@@ -41,7 +42,8 @@ var main = {
             stackCategory: $('#stackCategory').val(),
             description: $('#description').val(),
             postNum: $('#postNum').val(),
-            githubRepo: $('#githubRepo').val()
+            githubRepo: $('#githubRepo').val(),
+            importance: $('#importance').val()
         };
 
         var id = $('#id').val();
@@ -54,7 +56,7 @@ var main = {
             data: JSON.stringify(data)
         }).done(function() {
             alert('링크가 수정되었습니다.');
-            window.location.href = '/link';
+            window.location.href = '/link?page=1&type=title&keyword=';
         }).fail(function (error) {
             alert(JSON.stringify(error));
         });
@@ -69,7 +71,7 @@ var main = {
             contentType:'application/json; charset=utf-8'
         }).done(function() {
             alert('링크가 삭제되었습니다.');
-            window.location.href = '/link';
+            window.location.href = '/link?page=1&type=title&keyword=';
         }).fail(function (error) {
             alert(JSON.stringify(error));
         });

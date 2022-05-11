@@ -1,4 +1,4 @@
-package pracs1.springboot.posts.exception;
+package pracs1.springboot.search.exception;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

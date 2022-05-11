@@ -1,10 +1,10 @@
-package pracs1.springboot.posts.search;
+package pracs1.springboot.search.search;
 
 import lombok.*;
 import pracs1.springboot.domain.posts.Posts;
 import pracs1.springboot.domain.posts.PostsRepository;
-import pracs1.springboot.posts.pagination.Pagination;
-import pracs1.springboot.posts.search.dto.SearchResultDto;
+import pracs1.springboot.search.pagination.Pagination;
+import pracs1.springboot.search.search.PostsDto.SearchPostResultDto;
 import pracs1.springboot.web.dto.PostsListResponseDto;
 import java.util.Comparator;
 import java.util.List;
@@ -25,7 +25,7 @@ public class PostsSearch {
 
     private List<Posts> searchPostsList;
 
-    public SearchResultDto findSearchPostsList(int page, String type, String keyword) {
+    public SearchPostResultDto findSearchPostsList(int page, String type, String keyword) {
         initParam(page, type, keyword);
         listSetByType();
         return ResultDtoCreate();
@@ -53,7 +53,7 @@ public class PostsSearch {
         }
     }
 
-    public SearchResultDto ResultDtoCreate(){
+    public SearchPostResultDto ResultDtoCreate(){
         totalListCnt = this.searchPostsList.size();
         Pagination pagination = new Pagination(totalListCnt, this.page);
         int startindex = pagination.getStartIndex();
@@ -66,7 +66,7 @@ public class PostsSearch {
                 .map(PostsListResponseDto::new)
                 .collect(Collectors.toList());
 
-        SearchResultDto searchResultDto = new SearchResultDto(searchPostsListPaging, pagination, type, keyword);
+        SearchPostResultDto searchResultDto = new SearchPostResultDto(searchPostsListPaging, pagination, type, keyword);
 
         return searchResultDto;
     }

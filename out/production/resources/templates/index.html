@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html th:replace="~{layout/layoutFile :: layout(~{::head}, ~{::main})}" xmlns:th="http://www.thymeleaf.org">
+<html th:replace="~{layout/layoutFile :: layout(~{::head}, ~{::main1}, ~{::main2})}" xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>fadet's project Home</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -8,35 +8,68 @@
 </head>
 <body>
     <header>index header</header>
-    <main>
+    <main1>
+        <p><br></p>
+        <div style="display: flex">
+            <h2 style="margin-right: 10px">학습 진척 사항</h2><a href="/link?page=1&type=title&keyword=""" role="button" class="btn btn-outline-light">더보기</a>
+        </div>
+        <p><br></p>
+        <div class="row">
+            <div class="col-sm-8">
+                <table class="table table-hover" style="color: white">
+                    <thead>
+                    <tr>
+                        <th style="width: 3%;">제목</th>
+                        <th style="width: 3%">스택종류</th>
+                        <th style="width: 13%;">설명</th>
+                        <th style="width: 1%;">blog</th>
+                        <th style="width: 1%;">github</th>
+                    </tr>
+                    </thead>
+                    <tbody id="tbody">
+                    <tr th:each="link : ${link}">
+                        <td class="bold" style="width: 3%;"><a th:href="@{/link/update/{linkId}(linkId=${link.id})}">[[${link.title}]]</td>
+                        <td class="bold" style="width: 3%">[[${link.stackCategory}]]</a></td>
+                        <td class="bold" style="width: 13%"><a th:href="@{/link/update/{linkId}(linkId=${link.id})}">[[${link.description}]]</td>
+                        <td style="width: 1%"><a th:if="${not #strings.isEmpty(link.postNum)}" th:href="@{https://fadet-coding.tistory.com/{postNum}(postNum=${link.postNum})}">링크</td>
+                        <td style="width: 1%"><a th:if="${not #strings.isEmpty(link.githubRepo)}" th:href="@{https://github.com/kth1017/{githubRepo}(githubRepo=${link.githubRepo})}">링크</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <p><br></p>
+    </main1>
+        <p><br></p>
+    <main2>
         <p><br></p>
         <div style="display: flex">
             <h2 style="margin-right: 10px">게시글</h2><a href="/search?page=1&type=title&keyword=" role="button" class="btn btn-outline-light">글목록 이동</a>
         </div>
-            <p><br></p>
-            <div class="row">
-                <div class="col-sm-6">
-                    <table class="table table-hover" style="color: white">
-                        <thead>
-                        <tr>
-                            <th style="width: 3%;">No</th>
-                            <th style="width: 10%">제목</th>
-                            <th style="width: 5%;">작성자</th>
-                            <th style="width: 10%;">최종수정일</th>
-                        </tr>
-                        </thead>
-                        <tbody id="tbody">
-                        <tr th:each="post : ${posts}">
-                            <td style="width: 3%;">[[${post.id}]]</td>
-                            <td class="bold" style="width: 10%"><a th:href="@{/posts/update/{postId}(postId=${post.id})}">[[${post.title}]]</a></td>
-                            <td style="width: 5%">[[${post.author}]]</td>
-                            <td style="width: 10%">[[${post.modifiedDate}]]</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
+        <p><br></p>
+        <div class="row">
+            <div class="col-sm-6">
+                <table class="table table-hover" style="color: white">
+                    <thead>
+                    <tr style="background-color:rgba(0,0,0,0.3)">
+                        <th style="width: 3%;">No</th>
+                        <th style="width: 10%">제목</th>
+                        <th style="width: 5%;">작성자</th>
+                        <th style="width: 10%;">최종수정일</th>
+                    </tr>
+                    </thead>
+                    <tbody id="tbody">
+                    <tr style="background-color:rgba(0,0,0,0.3)" th:each="post : ${posts}">
+                        <td style="width: 3%">[[${post.id}]]</td>
+                        <td class="bold" style="width: 10%"><a th:href="@{/posts/update/{postId}(postId=${post.id})}">[[${post.title}]]</a></td>
+                        <td style="width: 5%">[[${post.author}]]</td>
+                        <td style="width: 10%">[[${post.modifiedDate}]]</td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
-    </main>
+        </div>
+    </main2>
     <footer>index footer</footer>
 </body>
 </html>

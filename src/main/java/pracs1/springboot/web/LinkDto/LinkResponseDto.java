@@ -8,6 +8,7 @@ public class LinkResponseDto {
 
     private Long id;
     private String title;
+    private Long importance;
 
     private String stackCategory;
     private String description;
@@ -21,5 +22,6 @@ public class LinkResponseDto {
         this.description = entity.getDescription();
         this.postNum = entity.getPostNum();
         this.githubRepo = entity.getGithubRepo();
+        this.importance = entity.getImportance();
     }
 }

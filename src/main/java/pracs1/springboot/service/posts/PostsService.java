@@ -1,14 +1,13 @@
 package pracs1.springboot.service.posts;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.boot.autoconfigure.web.ServerProperties;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pracs1.springboot.domain.posts.Posts;
 import pracs1.springboot.domain.posts.PostsRepository;
-import pracs1.springboot.posts.pagination.Pagination;
-import pracs1.springboot.posts.search.PostsSearch;
-import pracs1.springboot.posts.search.dto.SearchResultDto;
+import pracs1.springboot.search.pagination.Pagination;
+import pracs1.springboot.search.search.PostsSearch;
+import pracs1.springboot.search.search.PostsDto.SearchPostResultDto;
 import pracs1.springboot.web.dto.PostsListResponseDto;
 import pracs1.springboot.web.dto.PostsResponseDto;
 import pracs1.springboot.web.dto.PostsSaveRequestDto;
@@ -58,8 +57,9 @@ public class PostsService {
         postsRepository.delete(posts);
 
     }
-
-    // 인덱스 최대 글 제한
+    /*
+    인덱스 최대 글 제한
+     */
     public List<PostsListResponseDto> indexPaginationCall() {
         Pagination indexPagination = Pagination.indexPaginationCreate(5);
         return postsRepository.findAllDesc().stream()
@@ -67,11 +67,9 @@ public class PostsService {
                 .map(PostsListResponseDto::new)
                 .collect(Collectors.toList());
     }
-
     /*
     검색 기능 서비스
      */
-
     @Transactional
     public List<PostsListResponseDto> findListpaging(int startindex, int pagesize) {
         return postsRepository.findAllDesc().stream()
@@ -107,9 +105,9 @@ public class PostsService {
 //                .collect(Collectors.toList());
 //    }
 
-    public SearchResultDto findSearchListByType(int page, String type, String keyword) {
+    public SearchPostResultDto findSearchListByType(int page, String type, String keyword) {
         PostsSearch postsSearch = new PostsSearch(postsRepository);
-        SearchResultDto dto = postsSearch.findSearchPostsList(page, type, keyword);
+        SearchPostResultDto dto = postsSearch.findSearchPostsList(page, type, keyword);
         return dto;
     }
 }

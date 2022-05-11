@@ -1,4 +1,4 @@
-package pracs1.springboot.posts.pagination;
+package pracs1.springboot.search.pagination;
 
 import lombok.Getter;
 import lombok.Setter;

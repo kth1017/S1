@@ -10,6 +10,7 @@ import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 import pracs1.springboot.config.auth.SecurityConfig;
+import pracs1.springboot.web.as_is.HelloController;
 
 //import static org.hamcrest.Matcher.is;
 //import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
