@@ -4,7 +4,7 @@ import lombok.*;
 import pracs1.springboot.domain.posts.Posts;
 import pracs1.springboot.domain.posts.PostsRepository;
 import pracs1.springboot.search.pagination.Pagination;
-import pracs1.springboot.search.search.PostsDto.SearchPostResultDto;
+import pracs1.springboot.search.search.dto.SearchPostResultDto;
 import pracs1.springboot.web.dto.PostsListResponseDto;
 import java.util.Comparator;
 import java.util.List;

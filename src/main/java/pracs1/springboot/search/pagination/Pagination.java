@@ -55,13 +55,10 @@ public class Pagination {
         setStartPage((block - 1) * blockSize + 1);
         /** 블럭 마지막 페이지 **/
         setEndPage(startPage + blockSize - 1);
-
         /** 이전 블럭(클릭 시, 이전 블럭 마지막 페이지) **/
         setPrevBlockPage((block * blockSize) - blockSize);
-
         /** 다음 블럭(클릭 시, 다음 블럭 첫번째 페이지) **/
         setNextBlockPage((block * blockSize) + 1);
-
         /** DB 접근 시작 index **/
         setStartIndex((page - 1) * pageSize);
 
@@ -106,7 +103,6 @@ public class Pagination {
             setTotalPageCnt(1);
             setEndPage(1);
             setNextBlockPage(1);
-
         }
     }
 }

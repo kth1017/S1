@@ -1,11 +1,10 @@
-package pracs1.springboot.search.search.PostsDto;
+package pracs1.springboot.search.search.dto;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import pracs1.springboot.search.pagination.Pagination;
 import pracs1.springboot.web.LinkDto.LinkListResponseDto;
-import pracs1.springboot.web.dto.PostsListResponseDto;
 
 import java.util.List;
 

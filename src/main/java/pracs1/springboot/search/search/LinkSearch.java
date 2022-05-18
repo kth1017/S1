@@ -6,8 +6,7 @@ import lombok.Setter;
 import pracs1.springboot.domain.link.Link;
 import pracs1.springboot.domain.link.LinkRepository;
 import pracs1.springboot.search.pagination.Pagination;
-import pracs1.springboot.search.search.PostsDto.SearchLinkResultDto;
-import pracs1.springboot.search.search.PostsDto.SearchPostResultDto;
+import pracs1.springboot.search.search.dto.SearchLinkResultDto;
 import pracs1.springboot.web.LinkDto.LinkListResponseDto;
 
 import java.util.Comparator;
@@ -53,9 +52,6 @@ public class LinkSearch {
                 this.searchLinkList = linkRepository.findByStackCategoryContaining(keyword);
                 break;
             case "description":
-                this.searchLinkList = linkRepository.findByDescriptionContaining(keyword);
-                break;
-            case "all":
                 this.searchLinkList = linkRepository.findByDescriptionContaining(keyword);
                 break;
         }

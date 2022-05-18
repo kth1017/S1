@@ -1,4 +1,4 @@
-package pracs1.springboot;
+package pracs1.springboot.web.dto;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

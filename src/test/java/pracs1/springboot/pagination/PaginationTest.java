@@ -65,6 +65,5 @@ class PaginationTest {
         assertThat(pagination.getEndPage()).isEqualTo(1);
         assertThat(pagination.getPrevBlockPage()).isEqualTo(1);
         assertThat(pagination.getNextBlockPage()).isEqualTo(1);
-
     }
 }
