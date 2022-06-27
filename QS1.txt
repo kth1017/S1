@@ -33,3 +33,6 @@
 
 // ResolveArgument 인자 +
 
+# 버전 업그레이드시 file structure, java compiler 설정
+
+# properties 한글깨짐시 settings > encoding > utf-8
