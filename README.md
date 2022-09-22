@@ -1,4 +1,4 @@
-# S1
+# S1 개요
 스프링 시큐리티를 사용한 로그인 게시판 프로젝트
 
 JAVA, Spring boot, JPA, thymeleaf, Mustache, AWS EC2 RDS, MariaDB
