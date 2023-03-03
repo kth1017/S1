@@ -9,31 +9,31 @@ ver는 배포가 됐었던 커밋만 나열합니다.
 
 
 # ver 1.0.0
-@ branch 'main' commit '프로젝트 배포완료'
+@branch 'main' commit '프로젝트 배포완료'
 
-@ 책 부분 : ~ 24시간 배포 스크립트 완성
+@책 부분 : ~ 24시간 배포 스크립트 완성
 
 # ver 1.0.1
-@ branch 'custom' commit '타임리프 수정1'
+@branch 'custom' commit '타임리프 수정1'
 
-@ as is
+@as is
 - mustache
 - h2
 
-@ to be
+@to be
 - mustache 작성 내용 전부 as_is 폴더로 이동
 - 작성된 3 페이지 thymeleaf로 변경
 - https://fadet-coding.tistory.com/27
 
 # ver 1.0.2
-@ branch 'custom' commit '스크립트 수정2'
+@branch 'custom' commit '스크립트 수정2'
 
 @to be
 - index.html 디자인 수정
 - 관련 링크 추가
 
 # ver 1.0.3
-@ branch 'custom' commit '~페이징 테스트코드'
+@branch 'custom' commit '~페이징 테스트코드'
 
 @to be
 - 템플릿 레이아웃 분할, 페이징 기능 추가 
@@ -44,7 +44,7 @@ ver는 배포가 됐었던 커밋만 나열합니다.
 - yml 설정으로 DB에 더미데이터 추가
 
 # ver 1.0.4
-@ branch 'custom' commit '중간 배포본 포트 수정6'
+@branch 'custom' commit '중간 배포본 포트 수정6'
 
 @to be
 - 검색 기능 추가 및 페이징에 검색 적용
@@ -52,7 +52,7 @@ ver는 배포가 됐었던 커밋만 나열합니다.
 - 추가된 기능에 맞춰 html, js의 url 전부 수정
 
 # ver 1.0.5
-@ branch 'custom' commit '링크 임시 완성'
+@branch 'custom' commit '링크 임시 완성'
 
 @to be
 - 현재 fadet이 진행한 학습 사항을 파악할 수 있는 게시판 추가(관련 링크)
