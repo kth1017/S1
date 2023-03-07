@@ -1,12 +1,13 @@
 # S1 개요
 스프링 시큐리티를 사용한 로그인 게시판 프로젝트
 
+- 문제 발생 : 스프링 부트의 기초 학습을 진행했지만 예제가 아닌 실제 mvc가 작동하는 페이지를 배포해보고 싶어짐 
+- 해결 : 이동욱님의 저서 '스프링부트와 AWS로 혼자 구현하는 웹서비스'를 참고하여 실제 웹서비스를 AWS로 배포
+
 JAVA, Spring boot, JPA, thymeleaf, Mustache, AWS EC2/RDS, MariaDB
 
-서비스 주소 : https://bit.ly/3rlvLqF
-
-ver는 배포가 됐었던 커밋만 나열합니다.
-
+url 링크: https://bit.ly/3rlvLqF
+post 링크: https://fadet-coding.tistory.com/10
 
 # ver 1.0.0
 @branch 'main' commit '프로젝트 배포완료'
