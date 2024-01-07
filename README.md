@@ -9,6 +9,14 @@ JAVA, Spring boot, JPA, thymeleaf, Mustache, AWS EC2/RDS, MariaDB
 url 링크: https://bit.ly/3rlvLqF
 post 링크: https://fadet-coding.tistory.com/10
 
+# 사용 기술
+
+- Spring : Spring Boot로 서블릿 기반 Spring MVC 서버 구현, Spring Security의 Oauth 2.0으로 소셜 로그인 구현
+- JPA : Spring data jpa + JPQL로 entity를 영속화하여 DB와 연결
+- AWS : EC2 서버 내에서 무중단 스크립트 배포
+- JavaScript : 비동기 HTTP 통신을 위해 ajax 사용
+- thymeleaf : 타임리프를 사용해 검색, 페이징 구현
+
 # ver 1.0.0
 @branch 'main' commit '프로젝트 배포완료'
 
