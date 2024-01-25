@@ -1,5 +1,6 @@
 # S1 개요
 스프링 시큐리티를 사용한 로그인 게시판 프로젝트
+
 JAVA, Spring boot, JPA, thymeleaf, Mustache, AWS EC2/RDS, MariaDB
 
 - 문제 발생 : 스프링 부트의 기초 학습을 진행했지만 예제가 아닌 실제 mvc가 작동하는 페이지를 배포해보고 싶어짐 
