@@ -6,7 +6,7 @@
 
 JAVA, Spring boot, JPA, thymeleaf, Mustache, AWS EC2/RDS, MariaDB
 
-url 링크: https://bit.ly/3rlvLqF
+url 링크: https://bit.ly/3rlvLqF (EC2 프리티어 만료로 임시 페쇄로 현재 사용불가)
 post 링크: https://fadet-coding.tistory.com/10
 
 # 사용 기술
