@@ -1,16 +1,17 @@
 # S1 개요
 스프링 시큐리티를 사용한 로그인 게시판 프로젝트
+JAVA, Spring boot, JPA, thymeleaf, Mustache, AWS EC2/RDS, MariaDB
 
 - 문제 발생 : 스프링 부트의 기초 학습을 진행했지만 예제가 아닌 실제 mvc가 작동하는 페이지를 배포해보고 싶어짐 
 - 해결 : 이동욱님의 저서 '스프링부트와 AWS로 혼자 구현하는 웹서비스'를 참고하여 실제 웹서비스를 AWS로 배포
 
 
 
-  url 링크: https://bit.ly/3rlvLqF (EC2 프리티어 만료로 임시 페쇄 / 현재 사용불가)
+url 링크: https://bit.ly/3rlvLqF (EC2 프리티어 만료로 임시 페쇄 / 현재 사용불가)
   
 post 링크: https://fadet-coding.tistory.com/10
 
-JAVA, Spring boot, JPA, thymeleaf, Mustache, AWS EC2/RDS, MariaDB
+
 
 # 사용 기술
 
